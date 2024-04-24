@@ -1,0 +1,14 @@
+* {
+  background-color: black;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.about-decoy {
+  border: solid whitesmoke 1px;
+  border-radius: 4px;
+  margin: 40px;
+  text-align: center;
+  padding: 10px;
+}
+
