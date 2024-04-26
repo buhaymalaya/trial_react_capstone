@@ -22,7 +22,7 @@ export default function PostForm() {
         if( res.ok ){
             const data = await res.json()
             console.log(data);
-            toast("Thread Created");
+            alert("Thread Created");
             clearPostForm();
         }
     }
@@ -45,7 +45,7 @@ export default function PostForm() {
         <form className="mb-1" onSubmit={handlePostFormSubmit}>
             <label htmlFor="title">Title</label><br />
             <input type="text" name='title' ref={titleInputRef} /><br />
-            <label htmlFor="post-body">Post Content</label><br />
+            <label htmlFor="post-body">Share Your Thoughts</label><br />
             <input type="text" name='post-body' className="mb-1" ref={postBodyInputRef} required/><br />
             <input type="submit" value='post' />
         </form>

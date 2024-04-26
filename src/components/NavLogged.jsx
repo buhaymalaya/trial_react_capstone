@@ -11,14 +11,11 @@ const CustomNavbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto ms-auto">
-            <Link to="/home" className='nav-link'>HOME</Link>
-            <Link to="/about" className='nav-link'>ABOUT</Link>
-            <Link to="/discusslogin" className='nav-link'>DISCUSS</Link>
-            <Link to="/intakelogin" className='nav-link'>INTAKE</Link>
+            <Link to="/discuss" className='nav-link'>DISCUSS</Link>
+            <Link to="/intake" className='nav-link'>INTAKE</Link>
             <Link to="/resources" className='nav-link'>RESOURCES</Link>
-            <Link to="/signup" className='nav-link'>SIGN UP</Link>
-            <Link to="/login" className='nav-link'>LOG IN</Link>
-            <Link to="/profilelogin" className='nav-link'>PROFILE</Link>
+            <Link to="/profile" className='nav-link'>PROFILE</Link>
+            <Link to="/logout" className='nav-link'>LOG OUT</Link>
 
 
 

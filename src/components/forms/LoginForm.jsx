@@ -1,6 +1,6 @@
 // able to obtain access token on console - 
-
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from 'react'
+import { UserContext } from '../contexts/UserContext'
 // useState manages state wherein it returns an array [current state,
 // function to update state] while useEffect performs tasks such as fetching
 // API data, manually changing DOM..and has a function as arg that is
@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 export default function LoginForm() {
 
     const [ userLogin, setUserLogin ] = useState({ username: '', password: ''});
+    const { user, setUser } = useContext(UserContext)
     const navigate = useNavigate();
     
     // console.table(userLogin);
@@ -22,7 +23,6 @@ export default function LoginForm() {
     useEffect(()=>{
         if( userLogin.username ){
             loginUser();
-            // setUserLogin({username:'',password:''})
         }
     }, [userLogin])
 
@@ -34,9 +34,12 @@ export default function LoginForm() {
             body: JSON.stringify(userLogin)
         })
         if (res.ok) {
-            const data = await res.json();
-            console.log(data.access_token);
-            navigate('/home')
+            const { access_token } = await res.json();
+            console.log(access_token);
+            setUser({...userLogin, accessToken: access_token})
+            navigate('loggedin')
+            alert(`User: ${userLogin.username} logged in`)
+            
         } else console.error("Please check your username/password. Try again.")
     }
 

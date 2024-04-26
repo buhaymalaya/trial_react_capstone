@@ -2,7 +2,7 @@ import BodyActual from "../BodyActual";
 import { Container } from "react-bootstrap";
 import LoginForm from "../forms/LoginForm";
 
-export default function LoginPage() {
+export default function DiscussLoginPage() {
     return (
         <Container>
             <BodyActual NavActual >
