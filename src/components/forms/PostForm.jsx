@@ -1,5 +1,6 @@
 import { useContext, useRef } from "react"
 import { UserContext } from "../contexts/UserContext";
+import { Container } from "react-bootstrap";
 
 export default function PostForm() {
 
@@ -42,12 +43,18 @@ export default function PostForm() {
     }
 
     return (
+        <Container className="about-decoy">
         <form className="mb-1" onSubmit={handlePostFormSubmit}>
+                <p> [ Community Guidelines: Please be respectful and practice empathy. ]</p>
+            <hr />
             <label htmlFor="title">Title</label><br />
-            <input type="text" name='title' ref={titleInputRef} /><br />
+            <input type="text" name='title' ref={titleInputRef} style={{ width: '100%', padding: '8px', marginBottom: '16px' }} /><br />
             <label htmlFor="post-body">Share Your Thoughts</label><br />
-            <input type="text" name='post-body' className="mb-1" ref={postBodyInputRef} required/><br />
-            <input type="submit" value='post' />
+            <input type="text" name='post-body' className="mb-1" ref={postBodyInputRef} style={{ width: '100%', height: '150px', padding: '8px' }} required/><br />
+            <input type="submit" value='post' style={{ padding: '5px 10px', marginTop: '16px' }} />
         </form>
+
+        </Container>
     )
+    
 }

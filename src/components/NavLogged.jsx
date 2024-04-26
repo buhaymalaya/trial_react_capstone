@@ -13,7 +13,6 @@ const CustomNavbar = () => {
           <Nav className="me-auto ms-auto">
             <Link to="/discuss" className='nav-link'>DISCUSS</Link>
             <Link to="/intake" className='nav-link'>INTAKE</Link>
-            <Link to="/resources" className='nav-link'>RESOURCES</Link>
             <Link to="/profile" className='nav-link'>PROFILE</Link>
             <Link to="/logout" className='nav-link'>LOG OUT</Link>
 

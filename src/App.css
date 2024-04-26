@@ -17,9 +17,27 @@
   text-decoration: none;
 }
 
-/* .gsc-option-meu {
-  background-color: white;
-} */
+.post {
+  margin-bottom: 30px;
+  border: 3px double gray;
+}
 
+.reply {
+  border: 1px solid white;
+  
+  text-align: start;
+}
 
+.discussion-table {
+  border-collapse: collapse;
+}
+
+.discussion-table th, .discussion-table td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+.vertical-line {
+  border-left: 1px solid black;
+}
 
