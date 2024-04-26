@@ -7,6 +7,9 @@ import HomeDecoy from './components/pages/HomeDecoy'
 import HomeActual from './components/pages/HomeActual'
 import AboutActual from './components/pages/AboutActual'
 import ResourcesPage from './components/pages/ResourcesPage'
+import DiscussionPage from './components/pages/DiscussionPage.jsx'
+
+import { searchAPI } from './211api.jsx'
 
 export default function App() {
   return (
@@ -20,10 +23,11 @@ export default function App() {
         <Route path='/home' element={<HomeActual />}/>
         <Route path='/about' element={<AboutActual />}/>
         <Route path='/resources' element={<ResourcesPage />}/>
+        <Route path='/discuss' element={<DiscussionPage />}/>
 
-        {/* <Route path='/discuss' element={<Discuss />}/>
-        <Route path='/intake' element={<Intake />}/>
-        <Route path='/resouces' element={<Resources />}/> */}
+      
+        {/* <Route path='/intake' element={<Intake />}/> */}
+        
 
 
 

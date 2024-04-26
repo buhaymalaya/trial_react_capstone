@@ -1,124 +1,97 @@
-// import React, { useEffect, useState } from 'react';
+// import React, { useState, useEffect } from 'react';
 
-// const WIDTH = 800;
-// const HEIGHT = 600;
-// const CELL_SIZE = 30;
-// const WALL_COLOR = '#000';        // Black
-// const PATH_COLOR = '#FFF';        // White
-// const PLAYER_COLOR = '#F00';      // Red
-// const GOAL_COLOR = '#888';        // Gray
+// const Maze = ({ maze, playerPosition, setPlayerPosition, resetGame, WALL_COLOR, PATH_COLOR, CELL_SIZE, PLAYER_COLOR, GOAL_COLOR }) => {
+//     const [goalPosition, setGoalPosition] = useState({ x: 0, y: 0 });
 
-// function MazeGame() {
-//     const [maze, setMaze] = useState([]);
-//     const [playerX, setPlayerX] = useState(0);
-//     const [playerY, setPlayerY] = useState(0);
-//     const [goalX, setGoalX] = useState(0);
-//     const [goalY, setGoalY] = useState(0);
-
-//     // Generate maze using Recursive Backtracking algorithm
+//     // Update goal position when maze changes
 //     useEffect(() => {
-//         function generateMaze(width, height) {
-//             const newMaze = Array.from({ length: height }, () => Array.from({ length: width }, () => 1));
+//         if (maze) {
+//             const goal = maze.reduce((acc, row, y) => {
+//                 const x = row.findIndex(cell => cell === 2);
+//                 if (x !== -1) return { x, y };
+//                 return acc;
+//             }, { x: 0, y: 0 });
+//             setGoalPosition(goal);
+//         }
+//     }, [maze]);
 
-//             // Set the outer border walls
-//             for (let y = 0; y < height; y++) {
-//                 for (let x = 0; x < width; x++) {
-//                     if (x < 2 || x >= width - 2 || y < 2 || y >= height - 2) {
-//                         newMaze[y][x] = 1;
+//     useEffect(() => {
+//         const handleKeyDown = (event) => {
+//             if (maze) {
+//                 const { key } = event;
+//                 let { x, y } = playerPosition;
+
+//                 // Update player position based on key pressed
+//                 if (key === 'ArrowUp' && y > 0 && maze[y - 1][x] !== 1) {
+//                     y -= 1;
+//                 } else if (key === 'ArrowDown' && y < maze.length - 1 && maze[y + 1][x] !== 1) {
+//                     y += 1;
+//                 } else if (key === 'ArrowLeft' && x > 0 && maze[y][x - 1] !== 1) {
+//                     x -= 1;
+//                 } else if (key === 'ArrowRight' && x < maze[0].length - 1 && maze[y][x + 1] !== 1) {
+//                     x += 1;
+//                 }
+
+//                 // Update player position state
+//                 setPlayerPosition({ x, y });
+//             }
+//         };
+
+//         // Add event listener for keydown event
+//         document.addEventListener('keydown', handleKeyDown);
+
+//         // Remove event listener on component unmount
+//         return () => {
+//             document.removeEventListener('keydown', handleKeyDown);
+//         };
+//     }, [maze, playerPosition, setPlayerPosition]);
+
+//     useEffect(() => {
+//         const gameLoop = setInterval(() => {
+//             if (maze) {
+//                 // Fill screen with black
+//                 const canvas = document.getElementById('mazeCanvas');
+//                 const ctx = canvas.getContext('2d');
+//                 ctx.fillStyle = WALL_COLOR;
+//                 ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+//                 // Draw maze
+//                 for (let y = 0; y < maze.length; y++) {
+//                     for (let x = 0; x < maze[y].length; x++) {
+//                         const color = maze[y][x] === 1 ? WALL_COLOR : PATH_COLOR;
+//                         ctx.fillStyle = color;
+//                         ctx.fillRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
 //                     }
 //                 }
-//             }
 
-//             const stack = [[2, 2]];  // Start the maze generation from an inner cell
-//             const visited = new Set(['2,2']);
+//                 // Draw player
+//                 const { x: playerX, y: playerY } = playerPosition;
+//                 ctx.fillStyle = PLAYER_COLOR;
+//                 ctx.beginPath();
+//                 ctx.arc(playerX * CELL_SIZE + CELL_SIZE / 2, playerY * CELL_SIZE + CELL_SIZE / 2, CELL_SIZE / 3, 0, 2 * Math.PI);
+//                 ctx.fill();
 
-//             while (stack.length > 0) {
-//                 const [x, y] = stack[stack.length - 1];
-//                 const neighbors = [[x, y - 2], [x, y + 2], [x - 2, y], [x + 2, y]].filter(([nx, ny]) => nx > 0 && nx < width - 2 && ny > 0 && ny < height - 2 && !visited.has(`${nx},${ny}`));
+//                 // Draw goal
+//                 const { x: goalX, y: goalY } = goalPosition;
+//                 ctx.fillStyle = GOAL_COLOR;
+//                 ctx.beginPath();
+//                 ctx.arc(goalX * CELL_SIZE + CELL_SIZE / 2, goalY * CELL_SIZE + CELL_SIZE / 2, CELL_SIZE / 3, 0, 2 * Math.PI);
+//                 ctx.fill();
 
-//                 if (neighbors.length > 0) {
-//                     const [nx, ny] = neighbors[Math.floor(Math.random() * neighbors.length)];
-//                     newMaze[ny][nx] = 0;
-//                     newMaze[y + (ny - y) / 2][x + (nx - x) / 2] = 0;
-//                     stack.push([nx, ny]);
-//                     visited.add(`${nx},${ny}`);
-//                 } else {
-//                     stack.pop();
+//                 // Check for win condition
+//                 if (playerPosition.x === goalX && playerPosition.y === goalY) {
+//                     console.log("You win!");
+//                     resetGame(); // Assuming resetGame is a prop function passed down from the parent component
 //                 }
 //             }
+//         }, 1000 / 60); // Adjust the interval as needed (60 frames per second)
 
-//             // Place the goal on the opposite side of the maze
-//             const goalY = Math.random() < 0.5 ? 2 : height - 3;  // Place the goal either at the top or bottom row
-//             const goalX = Math.floor(Math.random() * (width - 5)) + 2;  // Randomly select a column for the goal
-//             newMaze[goalY][goalX] = 2;  // Represent the goal with a different value
-
-//             return newMaze;
-//         }
-
-//         setMaze(generateMaze(WIDTH / CELL_SIZE, HEIGHT / CELL_SIZE));
-
-//         // Generate a valid starting position for the player
-//         while (true) {
-//             const playerX = Math.floor(Math.random() * (maze[0].length - 5)) + 2;
-//             const playerY = Math.floor(Math.random() * (maze.length - 5)) + 2;
-//             if (maze[playerY][playerX] === 0) {
-//                 setPlayerX(playerX);
-//                 setPlayerY(playerY);
-//                 break;
-//             }
-//         }
-
-//         // Generate goal position
-//         const goalY = Math.random() < 0.5 ? 2 : HEIGHT / CELL_SIZE - 3; // Place the goal either at the top or bottom row
-//         const goalX = Math.floor(Math.random() * (WIDTH / CELL_SIZE - 5)) + 2; // Randomly select a column for the goal
-//         setGoalX(goalX);
-//         setGoalY(goalY);
-//     }, []);
-
-//     // Reset game
-//     function resetGame() {
-//         setMaze(generateMaze(WIDTH / CELL_SIZE, HEIGHT / CELL_SIZE));
-//         // Generate a valid starting position for the player
-//         while (true) {
-//             const playerX = Math.floor(Math.random() * (maze[0].length - 5)) + 2;
-//             const playerY = Math.floor(Math.random() * (maze.length - 5)) + 2;
-//             if (maze[playerY][playerX] === 0) {
-//                 setPlayerX(playerX);
-//                 setPlayerY(playerY);
-//                 break;
-//             }
-//         }
-//     }
-
-//     // Event handling
-//     function handleKeyDown(event) {
-//         document.addEventListener('keydown', (event) => {
-//             if (event.key === 'ArrowUp' && player_y > 0 && maze[player_y - 1][player_x] !== 1) {
-//                 // Move up
-//                 setPlayerY(prevPlayerY => prevPlayerY - 1);
-//             } else if (event.key === 'ArrowDown' && player_y < maze.length - 1 && maze[player_y + 1][player_x] !== 1) {
-//                 // Move down
-//                 setPlayerY(prevPlayerY => prevPlayerY + 1);
-//             } else if (event.key === 'ArrowLeft' && player_x > 0 && maze[player_y][player_x - 1] !== 1) {
-//                 // Move left
-//                 setPlayerX(prevPlayerX => prevPlayerX - 1);
-//             } else if (event.key === 'ArrowRight' && player_x < maze[0].length - 1 && maze[player_y][player_x + 1] !== 1) {
-//                 // Move right
-//                 setPlayerX(prevPlayerX => prevPlayerX + 1);
-//             }
-//         });
-        
-//     }
+//         return () => clearInterval(gameLoop); // Cleanup on unmount
+//     }, [maze, playerPosition, resetGame, WALL_COLOR, PATH_COLOR, CELL_SIZE, PLAYER_COLOR, GOAL_COLOR, goalPosition]);
 
 //     return (
-//         <canvas
-//             width={WIDTH}
-//             height={HEIGHT}
-//             onKeyDown={handleKeyDown}
-//             tabIndex="0"
-//             style={{ border: '1px solid black' }}
-//         />
+//         <canvas id="mazeCanvas" width={maze && maze[0].length * CELL_SIZE} height={maze && maze.length * CELL_SIZE}></canvas>
 //     );
-// }
+// };
 
-// export default MazeGame;
+// export default Maze;
