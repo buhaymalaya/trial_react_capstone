@@ -50,7 +50,7 @@ export default function PostForm() {
             <label htmlFor="title">Title</label><br />
             <input type="text" name='title' ref={titleInputRef} style={{ width: '100%', padding: '8px', marginBottom: '16px' }} /><br />
             <label htmlFor="post-body">Share Your Thoughts</label><br />
-            <input type="text" name='post-body' className="mb-1" ref={postBodyInputRef} style={{ width: '100%', height: '150px', padding: '8px' }} required/><br />
+            <textarea name="post-body" className="mb-1" ref={postBodyInputRef} style={{ width: '100%', height: '150px', padding: '8px' }} required></textarea><br />
             <input type="submit" value='post' style={{ padding: '5px 10px', marginTop: '16px' }} />
         </form>
 

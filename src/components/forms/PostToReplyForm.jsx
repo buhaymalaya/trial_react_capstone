@@ -1,0 +1,61 @@
+import { useEffect, useState, useContext } from "react";
+import { useParams, Link } from "react-router-dom";
+import { UserContext } from "../contexts/UserContext";
+import { Container } from "react-bootstrap";
+
+export default function PostToReplyPage() {
+    const { user } = useContext(UserContext);
+    const { postId } = useParams();
+    const [ post, setPost ] = useState(null);
+
+    useEffect(() => {
+        async function fetchPost() {
+            try {
+                const response = await fetch(`https://capstone-draft-flask.onrender.com/post/${postId}`, {
+                    method: "GET",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${user.accessToken}`,
+                    }
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    setPost(data);
+                } else {
+                    alert('Failed to fetch post:', response.statusText);
+                }
+            } catch (error) {
+                alert('Failed to fetch post:', error.message);
+            }
+        }
+
+        fetchPost();
+    }, [postId, user.accessToken]);
+
+    return (
+        <Container className="about-decoy">
+            <div>
+                <h4>Reply</h4>
+                {post ? (
+                    <div>
+                        <h2>{post.title}</h2>
+                        <p>{post.body}</p>
+                        <Link
+                            to={`/discusslogin/loggedin/${postId}/reply`}
+                            className="btn btn-primary"
+                            style={{
+                                backgroundColor: 'black',
+                                borderRadius: '0',
+                                borderColor: 'white',
+                                color: 'white'
+                            }}
+                        >
+                            reply to topic
+                        </Link>                    </div>
+                ) : (
+                    <p>Loading post...</p>
+                )}
+            </div>
+        </Container>
+    );
+}

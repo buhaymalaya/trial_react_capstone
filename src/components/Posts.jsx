@@ -1,5 +1,6 @@
-import React, { useEffect, useState, useContext} from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom"; // 
 import { UserContext } from "./contexts/UserContext";
 
 export default function Posts() {
@@ -48,7 +49,9 @@ export default function Posts() {
                         {posts.map(post => (
                             <React.Fragment key={post.id}>
                                 <tr className="post">
-                                    <td>{post.title}</td>
+                                    <td>
+                                        <Link to={`/discusslogin/loggedin/${post.id}`}>{post.title}</Link>
+                                    </td>
                                     <td>{post.body}</td>
                                     <td>{post.time_created}</td> 
                                 </tr>
@@ -76,5 +79,4 @@ export default function Posts() {
             )}
         </Container>
     );
-    
 }
