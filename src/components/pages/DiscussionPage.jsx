@@ -27,9 +27,9 @@ export default function DiscussionPage() {
         <Container className="about-decoy">
             <BodyLoggedIn NavLogged>
             <marquee>Do NOT use the application around your POH. Only return when safe. Do NOT use the application around your POH. Only return when safe.</marquee>
-
+            <SearchForm onSearch={handleSearch} />
                 <PostForm />
-                <SearchForm onSearch={handleSearch} />
+                
                 <Posts posts={searchResults} />
             </BodyLoggedIn>
         </Container>
