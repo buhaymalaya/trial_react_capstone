@@ -14,6 +14,7 @@ import ProfileLoginPage from './components/pages/ProfileLoginPage.jsx'
 import BodyLoggedIn from './components/BodyLoggedIn.jsx'
 import PostToReplyPage from './components/pages/PostToReplyPage.jsx'
 import ReplyPage from './components/pages/ReplyPage.jsx'
+import IntakePage from './components/pages/IntakePage.jsx'
 
 import { searchAPI } from './211api.jsx'
 
@@ -39,6 +40,7 @@ export default function App() {
         <Route path='/discusslogin/loggedin' element={<DiscussionPage />}/>
         <Route path='/discusslogin/loggedin/:postId' element={<PostToReplyPage />}/>
         <Route path='/discusslogin/loggedin/:postId/reply' element={<ReplyPage />}/>
+        <Route path='/intakepage' element={<IntakePage />}/>
 
 
 

@@ -60,7 +60,7 @@ export default function EditPostForm() {
                     placeholder="Enter post content" 
                 /> 
                 <br /> <br />
-                <button type="submit">Update Post</button>
+                <button type="submit">update post</button>
             </form>
         </Container>
     );
