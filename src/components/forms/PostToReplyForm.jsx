@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 import { Container } from "react-bootstrap";
 
-export default function PostToReplyPage() {
+export default function PostToReplyForm() {
     const { user } = useContext(UserContext);
     const { postId } = useParams();
     const [ post, setPost ] = useState(null);
@@ -35,11 +35,11 @@ export default function PostToReplyPage() {
     return (
         <Container className="about-decoy">
             <div>
-                <h4>Reply</h4>
+                <h5>[ post reply ]</h5> 
                 {post ? (
-                    <div>
-                        <h2>{post.title}</h2>
-                        <p>{post.body}</p>
+                    <div className="about-decoy">
+                        <h5>Title: {post.title}</h5> <hr />
+                        <p>Message: {post.body}</p> <br></br> <hr />
                         <Link
                             to={`/discusslogin/loggedin/${postId}/reply`}
                             className="btn btn-primary"
@@ -48,7 +48,7 @@ export default function PostToReplyPage() {
                                 borderRadius: '0',
                                 borderColor: 'white',
                                 color: 'white'
-                            }}
+                            }} 
                         >
                             reply to topic
                         </Link>                    </div>

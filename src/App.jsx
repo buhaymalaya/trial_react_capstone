@@ -12,7 +12,7 @@ import DiscussLoginPage from './components/pages/DiscussLoginPage.jsx'
 import IntakeLoginPage from './components/pages/IntakeLoginPage.jsx'
 import ProfileLoginPage from './components/pages/ProfileLoginPage.jsx'
 import BodyLoggedIn from './components/BodyLoggedIn.jsx'
-import PostToReplyPage from './components/forms/PostToReplyForm.jsx'
+import PostToReplyPage from './components/pages/PostToReplyPage.jsx'
 import ReplyPage from './components/pages/ReplyPage.jsx'
 
 import { searchAPI } from './211api.jsx'
