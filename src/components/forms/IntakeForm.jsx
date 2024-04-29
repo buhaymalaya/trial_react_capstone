@@ -16,39 +16,80 @@ const IntakeForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!consentChecked) {
-            alert('Please review all information entered before you consent to submit the form.');
+            alert('Please review all information entered before you consent to submit the form in the "Submit Intake" tab.');
             return;
         }
 
-        // Generate PDF
+        const handleInputChange = (e) => {
+            const { name, value } = e.target;
+            setFormData({
+                ...formData,
+                [name]: value,
+            });
+        };
+
+    
         generatePDF(formData);
-        // Send email
+
         sendEmail(formData);
     };
 
     const generatePDF = (data) => {
         const doc = new jsPDF();
-        // Format and add form data to the PDF document
-        // For example:
-        doc.text(20, 20, `First Name: ${data.firstName}`);
-        doc.text(20, 30, `Last Name: ${data.lastName}`);
-        // Add other fields as needed
+        let y = 20;
+
+        // format and add form data to the PDF document
+        Object.entries(formData).forEach(([fieldName, fieldValue]) => {
+        // skip fields that are undefined or null
+        if (fieldValue !== undefined && fieldValue !== null) {
+            // add field label and value to the PDF document
+            doc.text(20, 10, `firstName`);
+            // increment y-coordinate for next field
+            y += 10; 
+            doc.text(20, 10, `middleName`);
+            y += 10; 
+
+        }
+    });
+        // use saveAs to save generated pdf
         doc.save('intake_form.pdf');
     };
 
-    const sendEmail = (data) => {
-        // Implement email sending logic
-        // For example using Nodemailer or an email service provider API
+    const sendEmail = async () => {
+        const formData = {
+            from_email: 'buhaymalaya@icloud.com',  
+            to_email: 'buhaymalaya@icloud.com',  
+            subject: 'Intake Form Submission',
+            html_content: `Intake Form Submission:<br>
+            Please see attached intake form. 
+            Upon careful review, forward document 
+            to respective DV shelters/safehouses. 
+            Thank you!<br>
+                            --- End of Form ---<br>
+                            `
+        };
+    
+        try {
+            const response = await fetch('https://capstone-draft-flask.onrender.com/submitintake', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+    
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+    
+            const data = await response.json();
+            console.log('Email sent successfully:', data);
+        } catch (error) {
+            console.error('There was a problem sending the email:', error);
+        }
     };
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
-    };
-
+    
+    
 
     return (
         <div className="container">

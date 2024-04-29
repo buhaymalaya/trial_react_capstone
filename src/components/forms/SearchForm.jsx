@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
+import SearchResultsTable from '../SearchResultsTable';
 
 const SearchForm = ({ onSearch }) => {
     const [keyword, setKeyword] = useState('');
+    const [searchResults, setSearchResults] = useState([]); // Define searchResults state
 
     const handleInputChange = (event) => {
         setKeyword(event.target.value);
@@ -19,15 +21,16 @@ const SearchForm = ({ onSearch }) => {
             });
             if (res.ok) {
                 const data = await res.json();
-                onSearch(data);
+                setSearchResults(data); // Update searchResults state with search results data
             } else {
+                alert("Failed to find posts")
                 console.error('Failed to fetch search results:', res.statusText);
             }
         } catch (error) {
+            alert("Failed to find posts")
             console.error('Failed to fetch search results:', error.message);
         }
     };
-    
 
     return (
         <Container className='about-decoy'>
@@ -49,6 +52,8 @@ const SearchForm = ({ onSearch }) => {
                     </Col>
                 </Row>
             </Form>
+
+<br />            {searchResults.length > 0 && <SearchResultsTable searchResults={searchResults} />}
         </Container>
     );
 };

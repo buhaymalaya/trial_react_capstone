@@ -33,7 +33,7 @@ export default function App() {
         <Route path='/discuss' element={<DiscussionPage />}/>
         <Route path='/discusslogin' element={<DiscussLoginPage />}/>
         <Route path='/intakelogin' element={<IntakeLoginPage />}/>
-        <Route path='/profilelogin' element={<IntakeLoginPage />}/>
+        {/* <Route path='/profilelogin' element={<IntakeLoginPage />}/> */}
         <Route path='/login/loggedin' element={<BodyLoggedIn />}/>
         <Route path='/logout' element={<HomeActual />}/>
         <Route path='/intakelogin/loggedin' element={<BodyLoggedIn />}/>
