@@ -4,7 +4,7 @@ export const UserContext = createContext();
 
 export default function UserProvider({ children }) {
 
-  const [user, setUser] = useState({ accessToken: ''});
+  const [user, setUser] = useState({ accessToken: '' });
 
   console.log(user, 'from user context');
 

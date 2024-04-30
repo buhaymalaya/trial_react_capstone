@@ -5,7 +5,7 @@ import LoginForm from "../forms/LoginForm";
 export default function ProfileLoginPage() {
     return (
         <Container>
-            <BodyActual NavActual >
+            <BodyActual NavActual>
                 <marquee>Do NOT use the application around your POH. Only return when safe. Do NOT use the application around your POH. Only return when safe.</marquee>
 
                 <LoginForm></LoginForm>
