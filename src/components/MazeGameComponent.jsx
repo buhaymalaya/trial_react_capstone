@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
-export default function MazeGameComponent() {
+const MazeGameComponent = () => {
   const [gameState, setGameState] = useState(null);
 
   useEffect(() => {
@@ -12,26 +12,24 @@ export default function MazeGameComponent() {
           throw new Error(`Failed to fetch game state: ${response.status} ${response.statusText}`);
         }
 
-        const data = await response.json();
-        setGameState(data);
-      } catch (error) {
-        if (error instanceof TypeError) {
-            console.error('Network error occurred:', error.message);
-          } else {
-            console.error('Error fetching game state:', error.message);
-      }
+        const data = await response.text();
+      console.log(data); // Log the response data
+      setGameState(JSON.parse(data)); // Parse the response as JSON
+    } catch (error) {
+      console.error('Error fetching game state:', error.message);
     }
-};
-    fetchGameState();
-  }, []);
+  };
+
+  fetchGameState();
+}, []);
 
   if (!gameState) {
     return <div>Loading...</div>;
   }
 
-  const { maze, player_position, goal_position } = gameState;
-
   const renderMazeGrid = () => {
+    const { maze, player_position, goal_position } = gameState;
+
     return maze.map((row, rowIndex) => (
       <div key={rowIndex} style={{ display: 'flex' }}>
         {row.map((cell, columnIndex) => (
@@ -57,4 +55,6 @@ export default function MazeGameComponent() {
       {renderMazeGrid()}
     </div>
   );
-}
+};
+
+export default MazeGameComponent;

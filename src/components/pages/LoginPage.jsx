@@ -6,7 +6,7 @@ export default function LoginPage() {
     return (
         <Container>
             <BodyActual NavActual >
-                <marquee>Do NOT use the application around your POH. Only return when safe. Do NOT use the application around your POH. Only return when safe.</marquee>
+            <marquee>Click [esc] at the top left to return to decoy maze game. Do NOT use the application around your POH. Only return when safe.</marquee>
 
                 <LoginForm></LoginForm>
             </BodyActual>

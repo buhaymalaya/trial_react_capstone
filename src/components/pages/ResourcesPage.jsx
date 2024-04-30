@@ -1,98 +1,59 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import BodyActual from '../BodyActual';
 import { Container } from 'react-bootstrap';
-import { searchAPI } from '../../211api';
 
-
-export const ResourcesPage = () => {
+const ResourcesPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [location, setLocation] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
 
-  // const handleSearch = async () => {
-  //   try {
-  //     const data = await searchAPI(searchTerm, location);
-  //     setSearchResults(data.results);
-  //   } catch (error) {
-  //     console.error('Error searching:', error);
-  //     alert('An error occurred while searching. Please try again.');
-  //   }
-  // };
+  useEffect(() => {
+    const cx = '53488ca667b0d454b'; 
+    const gcseScript = document.createElement('script');
+    gcseScript.src = `https://cse.google.com/cse.js?cx=${cx}`;
+    gcseScript.async = true;
+    document.body.appendChild(gcseScript);
 
-  // const displaySearchResults = () => {
-  //   if (searchResults.length === 0) {
-  //     return;
-  //   }
-
-  //   return searchResults.map(result => (
-  //     <div key={result.id}>
-  //       <p><strong>Title:</strong> {result.title}</p>
-  //       <p><strong>Description:</strong> {result.description}</p>
-  //       <p><strong>Location:</strong> {result.location}</p>
-  //     </div>
-  //   ));
-  // };
+    return () => {
+      document.body.removeChild(gcseScript);
+    };
+  }, []);
 
   return (
     <Container>
       <BodyActual NavActual>
-        <marquee>Do NOT use the application around your POH. Only return when safe. Do NOT use the application around your POH. Only return when safe.</marquee>
+        <marquee>Click [esc] at the top left to return to decoy maze game. Do NOT use the application around your POH. Only return when safe.</marquee>
         <div className='about-decoy'>
           RESOURCES
           <hr />
           <p>Search for more resources: (i.e. DV shelter 90501)</p>
-
           <div className="gcse-search"></div>
-          {/* <div>
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={e => setSearchTerm(e.target.value)}
-              placeholder="Search term"
-            />
-            <input
-              type="text"
-              value={location}
-              onChange={e => setLocation(e.target.value)}
-              placeholder="Location"
-            />
-            <button onClick={handleSearch}>Search</button>
-          </div>
-          <div id="search-results">
-            {displaySearchResults()}
-          </div> */}
           <hr />
-          NATIONAL DOMESTIC VIOLENCE HOTLINE: SPEAK/CHAT WITH AN ADVOCATE
-          <br />
-          https://www.thehotline.org/
-          <hr />
-          988 SUICIDE AND CRISIS LIFELINE
-          <br />
-          https://988lifeline.org/
-          <hr />
-          211: GENERAL INFORMATION (SHELTERS, MENTAL HEALTH, IMMIGRANT HELP)
-          <br />
-          https://www.211.org/
-          <hr />
-          DEPARTMENT OF SOCIAL SERVICES: FOOD STAMPS/LOW-INCOME HEALTH INSURANCE/CASH AID
-          <br />
-          [varies by state; call 211 for your specific DPSS line and website]
-          <hr />
-          STRONG HEARTS NATIVE AMERICAN HELP
-          <br />
-          http://strongheartshelpline.org/
-          <hr />
-          WOMEN'S LAW: STATE-BY-STATE INFO ON LAWS INCLUDING RESTRAINING ORDERS/CHILD CUSTODY
-          <br />
-          https://www.womenslaw.org/
-          <hr />
-          ABUSED DEAF WOMEN'S ADVOCACY SERVICES (ADWAS)
-          <br />
-          INFO ON HOW TO SEEK SUPPORT: https://www.youtube.com/watch?v=ql7zD8X80wE
+          <ResourceLinks />
         </div>
       </BodyActual>
     </Container>
   );
 };
+
+const ResourceLinks = () => (
+  <>
+    <ResourceLink title="NATIONAL DOMESTIC VIOLENCE HOTLINE: SPEAK/CHAT WITH AN ADVOCATE" url="https://www.thehotline.org/" />
+    <ResourceLink title="988 SUICIDE AND CRISIS LIFELINE" url="https://988lifeline.org/" />
+    <ResourceLink title="211: GENERAL INFORMATION (SHELTERS, MENTAL HEALTH, IMMIGRANT HELP)" url="https://www.211.org/" />
+    <ResourceLink title="DEPARTMENT OF SOCIAL SERVICES: FOOD STAMPS/LOW-INCOME HEALTH INSURANCE/CASH AID" url="[varies by state; call 211 for your specific DPSS line and website]" />
+    <ResourceLink title="STRONG HEARTS NATIVE AMERICAN HELP" url="http://strongheartshelpline.org/" />
+    <ResourceLink title="WOMEN'S LAW: STATE-BY-STATE INFO ON LAWS INCLUDING RESTRAINING ORDERS/CHILD CUSTODY" url="https://www.womenslaw.org/" />
+    <ResourceLink title="ABUSED DEAF WOMEN'S ADVOCACY SERVICES (ADWAS)" url="https://www.youtube.com/watch?v=ql7zD8X80wE" />
+  </>
+);
+
+const ResourceLink = ({ title, url }) => (
+  <>
+    <hr />
+    <p>{title}</p>
+    <br />
+    <a href={url}>{url}</a>
+  </>
+);
 
 export default ResourcesPage;

@@ -41,6 +41,8 @@ export default function ProfileForm() {
             }
         } catch (error) {
             console.error("Update failed. Please try again:", error.message);
+            alert("Profile updated successfully.");
+
         }
     }
 

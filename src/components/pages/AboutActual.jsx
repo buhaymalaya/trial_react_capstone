@@ -5,7 +5,7 @@ export default function About() {
     return (
         <BodyActual NavActual>
             <br />
-            <marquee>Do NOT use the application around your POH. Only return when safe. Do NOT use the application around your POH. Only return when safe.</marquee>
+            <marquee>Click [esc] at the top left to return to decoy maze game. Do NOT use the application around your POH. Only return when safe.</marquee>
             <div className='about-decoy'>
       
 

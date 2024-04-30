@@ -7,6 +7,7 @@ export default function BodyLoggedIn({ children }) {
     <Container>
         <Stack direction="vertical">
             <NavLogged />
+            {/* <p className="about-decoy">You are now logged in.</p> */}
             { children }
         </Stack>
     </Container>

@@ -9,6 +9,8 @@ export default function PostToReplyPage() {
   return (
     <Container className='about-decoy'>
         <BodyLoggedIn NavLogged>
+        <marquee>Click [esc] at the top left to return to decoy maze game. Do NOT use the application around your POH. Only return when safe.</marquee>
+
         <PostToReplyForm />
         <EditPostForm />
         <DeletePostForm />

@@ -8,9 +8,14 @@
   </head>
   <body>
     <div id="root"></div>
-    <script async src="https://cse.google.com/cse.js?cx=53488ca667b0d454b">
-
+    <script async src="https://cse.google.com/cse.js?cx=53488ca667b0d454b"></script>
+    <script>
+      window.onload = function() {
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.src = '/src/main.jsx';
+        document.body.appendChild(script);
+      };
     </script>
-    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
