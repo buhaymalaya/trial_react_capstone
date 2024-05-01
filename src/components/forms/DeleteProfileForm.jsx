@@ -38,6 +38,6 @@ export default function DeleteProfileForm() {
   };
 
   return (
-    <button type="button" onClick={deleteUser}>Delete User</button>
+    <button type="button" onClick={deleteUser}>delete account</button>
   );
 };

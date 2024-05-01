@@ -59,10 +59,10 @@ export default function ProfileForm() {
     return (
        
         <Container className="about-decoy">
-            <h5>Edit Your Profile</h5> <hr />
+            <h5>[ Edit Your Profile ]</h5> <hr />
             <form onSubmit={handleUpdateFormSubmit}>
  
-    <label htmlFor="username">Username:</label>
+    <label htmlFor="username">username:</label>
     <input
         type="text"
         name="username"
@@ -72,7 +72,7 @@ export default function ProfileForm() {
     />
 
     <hr />
-    <label htmlFor="email">Email:</label>
+    <label htmlFor="email">email:</label>
     <input
         type="email"
         name="email"
@@ -82,7 +82,7 @@ export default function ProfileForm() {
     />
 
     <hr />
-    <label htmlFor="password">Current Password:</label>
+    <label htmlFor="password">current password:</label>
     <input
         type="password"
         name="password"
@@ -92,7 +92,7 @@ export default function ProfileForm() {
     />   
 
     <hr />
-    <label htmlFor="first-name">First Name:</label>
+    <label htmlFor="first-name">first name:</label>
     <input
         type="text"
         name="first-name"
@@ -110,7 +110,7 @@ export default function ProfileForm() {
     />
 
     <hr />
-    <label htmlFor="zip-code">Zip Code:</label>
+    <label htmlFor="zip-code">zip code:</label>
     <input
         type="integer"
         name="zip-code"

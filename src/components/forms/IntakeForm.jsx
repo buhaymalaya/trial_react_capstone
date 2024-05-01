@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
 import { saveAs } from 'file-saver';
 import { jsPDF } from 'jspdf';
+import sgMail from '@sendgrid/mail';
+
 
 const IntakeForm = () => {
     const [key, setKey] = useState('page1');
@@ -19,48 +21,79 @@ const IntakeForm = () => {
             alert('Please review all information entered before you consent to submit the form in the "Submit Intake" tab.');
             return;
         }
-
-        const handleInputChange = (e) => {
-            const { name, value } = e.target;
-            setFormData({
-                ...formData,
-                [name]: value,
-            });
-        };
-
     
-        generatePDF(formData);
-
-        sendEmail(formData);
+        // Collect form data using FormData
+        const formData = new FormData(e.target);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+        setFormData(data);
+    
+        // Generate PDF with form data
+        generatePDF(data);
+    
+        // Send email with form data
+        sendEmail(data);
     };
+    
+    
 
-    const generatePDF = (data) => {
+    const generatePDF = (formData) => {
         const doc = new jsPDF();
         let y = 20;
-
-        // format and add form data to the PDF document
-        Object.entries(formData).forEach(([fieldName, fieldValue]) => {
-        // skip fields that are undefined or null
-        if (fieldValue !== undefined && fieldValue !== null) {
-            // add field label and value to the PDF document
-            doc.text(20, 10, `firstName`);
-            // increment y-coordinate for next field
-            y += 10; 
-            doc.text(20, 10, `middleName`);
-            y += 10; 
-
-        }
-    });
-        // use saveAs to save generated pdf
-        doc.save('intake_form.pdf');
+    
+        const sections = [
+            { title: 'Basic Demographics', fields: ['firstName', 'middleName', 'lastName', 'alias', 'genderIdentity', 'preferredPronouns', 'ethnicity', 'primaryLanguage', 'preferredLanguage', 'maritalStatus', 'dob', 'countryOfOrigin', 'currentAddress', 'residencyduration', 'pastresidency', 'currentResidency', 'currentResidencyDuration', 'pastShelter', 'safePhone', 'voiceMail', 'safeEmail'] },
+            { title: 'Medical/Legal', fields: ['medicalConditions', 'medications', 'healthInsurance', 'pastInjuries', 'pcp', 'legal', 'substance', 'criminal'] },
+            { title: 'Children', fields: ['childrenNames', 'childrenDOB', 'childCustody', 'POHparent', 'childHealth', 'school'] },
+            { title: 'POH', fields: ['pohName', 'relationship', 'pohDOB', 'pohEmployment', 'pohAddress', 'pohZips', 'pohSubstance', 'pohCriminal', 'pohProperty'] },
+            { title: 'History', fields: ['relationshipHistory'] },
+            { title: 'Other Info', fields: ['otherInfo'] },
+        ];
+    
+        sections.forEach((section, index) => {
+            if (index > 0) {
+                doc.addPage();
+                y = 20;
+            }
+    
+            doc.text(20, y, section.title, { fontSize: 10 });
+            y += 10;
+    
+            // Iterate over the fields in the section and add them to the PDF
+            section.fields.forEach((field) => {
+                const value = formData[field];
+                if (value !== undefined && value !== null) {
+                    if (section.title === 'History' || section.title === 'Other Info') {
+                        const lines = doc.splitTextToSize(value, 170); // Adjust width as needed
+                        lines.forEach(line => {
+                            const lineHeight = doc.getTextDimensions(line).h / doc.internal.scaleFactor;
+                            doc.text(20, y, line, { fontSize: 5 });
+                            y += lineHeight + 5; // Adjust spacing as needed
+                        });
+                    } else {
+                        const lineHeight = doc.getTextDimensions(value).h / doc.internal.scaleFactor;
+                        doc.text(20, y, `${field}: ${value}`, { fontSize: 5 });
+                        y += lineHeight + 5; // Adjust spacing as needed
+                    }
+                }
+            });
+        });
+    
+        // Save the concatenated PDF
+        doc.save("intake_form.pdf");
     };
+    
+    
+    
 
     const sendEmail = async () => {
         const formData = {
-            from_email: 'buhaymalaya@icloud.com',  
-            to_email: 'buhaymalaya@icloud.com',  
+            from: 'buhaymalaya@icloud.com',  
+            to: 'buhaymalaya@icloud.com',  
             subject: 'Intake Form Submission',
-            html_content: `Intake Form Submission:<br>
+            html: `Intake Form Submission:<br>
             Please see attached intake form. 
             Upon careful review, forward document 
             to respective DV shelters/safehouses. 
@@ -79,13 +112,16 @@ const IntakeForm = () => {
             });
     
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error('Network response error');
+
             }
     
             const data = await response.json();
             console.log('Email sent successfully:', data);
+            alert('Email sent successfully')
         } catch (error) {
             console.error('There was a problem sending the email:', error);
+            alert('There was a problem sending the email')
         }
     };
     
@@ -94,11 +130,11 @@ const IntakeForm = () => {
     return (
         <div className="container">
             <hr /> <h4 style={{ textAlign: 'center' }}>[ Intake Form ]</h4> <hr />
-
+            <form onSubmit={handleSubmit}> 
+            {/* wrap all tabs in one form */}
             <Tabs activeKey={key} onSelect={handleSelect}>
 
                 <Tab eventKey="page1" title="Basic Demographics">
-                    <form onSubmit={handleSubmit}>
                         <p>Note: Please ensure all fields are complete and accurate. Type N/A if it does not apply to you.</p> <hr />
 
                         <h5 style={{ textAlign: 'center' }}>Personal Information:</h5> <hr />
@@ -175,12 +211,10 @@ const IntakeForm = () => {
 
 
                         <button onClick={() => setKey('page2')}>Next</button> <br /> <br />
-                    </form>
                 </Tab>
 
 
                 <Tab eventKey="page2" title="Medical/Legal">
-                    <form onSubmit={handleSubmit}>
                         <p>Note: Please ensure all fields are complete and accurate. Type N/A if it does not apply to you.</p> <hr />
 
                         <label htmlFor="medicalConditions">Medical Conditions:</label>
@@ -210,12 +244,10 @@ const IntakeForm = () => {
                         <input type="text" id="criminal" name="criminal" /> <hr />
 
                         <button onClick={() => setKey('page3')}>Next</button> <br /> <br />
-                    </form>
                 </Tab>
 
 
                 <Tab eventKey="page3" title="Children">
-                    <form onSubmit={handleSubmit}>
 
                         <p>Note: Please ensure all fields are complete and accurate. Type N/A if it does not apply to you.</p> <hr />
 
@@ -240,11 +272,9 @@ const IntakeForm = () => {
 
 
                         <button onClick={() => setKey('page4')}>Next</button> <br /> <br />
-                    </form>
                 </Tab>
 
                 <Tab eventKey="page4" title="Person of Harm">
-                    <form onSubmit={handleSubmit}>
 
                         <p>Note: Please ensure all fields are complete and accurate. Type N/A if it does not apply to you.</p> <hr />
 
@@ -278,11 +308,9 @@ const IntakeForm = () => {
 
 
                         <button onClick={() => setKey('page5')}>Next</button> <br /> <br />
-                    </form>
                 </Tab>
 
                 <Tab eventKey="page5" title="Relationship History">
-                    <form onSubmit={handleSubmit}>
 
                         <p>Describe in detail your relationship history and timeline of abuse from your POH. Include dates and locations. Start with the most recent domestic violence incident and if the police were involved. Include any police records/restraining orders established. Remember that intimate partner violence (IPV) or domestic violence (DV) not only includes physical violence but also emotional, psychological, financial, emotional. The main goal of IPV is exertion of power and control on an individual that may include their family/children.</p> <hr />
 
@@ -300,22 +328,18 @@ First Incident of DV with POH
 '></textarea> <br /> <br />
 
                         <button onClick={() => setKey('page6')}>Next</button> <br /> <br />
-                    </form>
                 </Tab>
 
                 <Tab eventKey="page6" title="Other Info">
-                    <form onSubmit={handleSubmit}>
 
 
                         <label htmlFor="otherInfo">Other Information:</label> <br /> <br />
                         <textarea id="otherInfo" name="otherInfo" rows="10" style={{ width: '100%' }} 
                         placeholder='Any other relevant information you would like to share about the experiences you encountered with your POH as well as your current needs, challenges/obstacles, and responsibilities.'></textarea> <br /> <br />
                         <button onClick={() => setKey('page7')}>Next</button>
-                    </form>
                 </Tab>
 
                 <Tab eventKey="page7" title="Submit Intake">
-                    <form onSubmit={handleSubmit}>
                         <input
                             type="checkbox"
                             id="consent"
@@ -333,11 +357,12 @@ First Incident of DV with POH
 
 
                         <button onClick={() => setKey('page7')}>SUBMIT INTAKE</button>
-                    </form>
+                  
                 </Tab>
 
                 
-            </Tabs>
+            </Tabs>  
+            </form>
         </div>
 
 

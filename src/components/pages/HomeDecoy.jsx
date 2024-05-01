@@ -12,9 +12,9 @@ export default function HomeDecoy() {
     <p style={{ textAlign: 'center' }}>Press 'Run' to play the maze.</p>
     <p style={{ textAlign: 'center' }}>Click 'Stop' to refresh.</p>
 
-      <Container className="about-decoy" style={{ width: '450px', height: '420px', overflow: 'hidden' }}>
+      <Container className="about-decoy" style={{ width: '550px', height: '420px', overflow: 'hidden' }}>
 
-      <iframe src="https://trinket.io/embed/pygame/9f0dfcef73?outputOnly=true" width="80%" height="380" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen style={{ position: 'relative', left: '0px', top: '10px' }}></iframe>
+      <iframe src="https://trinket.io/embed/pygame/9f0dfcef73?outputOnly=true" width="80%" height="370" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen style={{ position: 'relative', left: '2px', top: '15px' }}></iframe>
 
       {/* <MazeDecoy /> */}
        {/* <MazeGameComponent /> */}

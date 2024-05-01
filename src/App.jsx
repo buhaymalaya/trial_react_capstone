@@ -20,6 +20,7 @@ import ProfilePage from './components/pages/ProfilePage.jsx'
 // import ProfileEditPage from './components/pages/ProfileEditPage.jsx'
 // import DeleteProfileForm from './components/forms/DeleteProfileForm.jsx'
 import UserDetailsTable from './components/UserDetailsTable.jsx'
+import YouAreLoggedIn from './components/pages/YouAreLoggedIn.jsx'
 
 export default function App() {
   return (
@@ -30,8 +31,6 @@ export default function App() {
         <Route path='/signup' element={<SignupPage />}/>
         <Route path='/login' element={<LoginPage />}/> 
         <Route path='/aboutdecoy' element={<AboutDecoy />}/>
-        <Route path='/profile' element={<ProfileLoginPage />}/>
-        <Route path='/profilelogin' element={<ProfileLoginPage />}/>
 
         <Route path='/home' element={<HomeActual />}/>
         <Route path='/about' element={<AboutActual />}/>
@@ -39,15 +38,20 @@ export default function App() {
         <Route path='/discuss' element={<DiscussionPage />}/>
         <Route path='/discusslogin' element={<DiscussLoginPage />}/>
         <Route path='/intakelogin' element={<IntakeLoginPage />}/>
-        <Route path='/login/loggedin' element={<BodyLoggedIn />}/>
+        <Route path='/login/loggedin' element={<YouAreLoggedIn />}/>
         <Route path='/logout' element={<HomeActual />}/>
+        
         <Route path='/intakelogin/loggedin' element={<BodyLoggedIn />}/>
+        
         <Route path='/discusslogin/loggedin' element={<DiscussionPage />}/>
         <Route path='/discusslogin/loggedin/:postId' element={<PostToReplyPage />}/>
         <Route path='/discusslogin/loggedin/:postId/reply' element={<ReplyPage />}/>
+        
         <Route path='/intakepage' element={<IntakePage />}/>
-        <Route path='/intakelogin/loggedin' element={<IntakePage />}/>
-
+        <Route path='/intakelogin/loggedin' element={<YouAreLoggedIn />}/>
+        
+        <Route path='/profilelogin' element={<ProfileLoginPage />}/>
+        <Route path='/profile' element={<ProfilePage />}/>
         <Route path='profilelogin/loggedin/' element={<ProfilePage />}/>
         <Route path='profile/loggedin/' element={<ProfilePage />}/>
 
