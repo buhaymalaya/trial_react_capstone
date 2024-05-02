@@ -31,10 +31,10 @@ const IntakeForm = () => {
         setFormData(data);
     
         // Generate PDF with form data
-        generatePDF(data);
+        const pdfData = generatePDF(data);
     
         // Send email with form data
-        sendEmail(data);
+        sendEmail(pdfData);
     };
     
     
@@ -80,7 +80,7 @@ const IntakeForm = () => {
                 }
             });
         });
-    
+        doc.output('datauristring');
         // Save the concatenated PDF
         doc.save("intake_form.pdf");
     };
@@ -88,40 +88,38 @@ const IntakeForm = () => {
     
     
 
-    const sendEmail = async () => {
+    const sendEmail = async (pdfData) => {
         const formData = {
-            from: 'buhaymalaya@icloud.com',  
-            to: 'buhaymalaya@icloud.com',  
+            from_email: 'buhaymalaya@icloud.com',  
+            to_emails: 'buhaymalaya@icloud.com',  
             subject: 'Intake Form Submission',
-            html: `Intake Form Submission:<br>
+            pdf_data: pdfData,
+            html_content: `Intake Form Submission:<br>
             Please see attached intake form. 
             Upon careful review, forward document 
             to respective DV shelters/safehouses. 
             Thank you!<br>
-                            --- End of Form ---<br>
-                            `
+                            --- End of Form ---<br>`
         };
-    
         try {
-            const response = await fetch('https://capstone-draft-flask.onrender.com/submitintake', {
+            const response = await fetch('https://capstone-draft-flask.onrender.com/send-pdf', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ pdfData }),
             });
     
             if (!response.ok) {
                 throw new Error('Network response error');
 
             }
-    
             const data = await response.json();
-            console.log('Email sent successfully:', data);
-            alert('Email sent successfully')
+            console.log('PDF sent successfully:', data);
+            alert('PDF sent successfully')
         } catch (error) {
             console.error('There was a problem sending the email:', error);
-            alert('There was a problem sending the email')
+            alert('There was a problem sending the PDF')
         }
     };
     

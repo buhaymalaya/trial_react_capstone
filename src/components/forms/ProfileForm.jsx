@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext, useRef } from "react";
 import { Container } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
-import { UserContext } from "../contexts/UserContext";
+import { UserContext } from "../contexts/UserContext.jsx";
 
 export default function ProfileForm() {
     const { user } = useContext(UserContext);

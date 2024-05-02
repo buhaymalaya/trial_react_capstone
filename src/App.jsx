@@ -41,7 +41,7 @@ export default function App() {
         <Route path='/login/loggedin' element={<YouAreLoggedIn />}/>
         <Route path='/logout' element={<HomeActual />}/>
         
-        <Route path='/intakelogin/loggedin' element={<BodyLoggedIn />}/>
+        <Route path='/intakelogin/loggedin' element={<IntakePage />}/>
         
         <Route path='/discusslogin/loggedin' element={<DiscussionPage />}/>
         <Route path='/discusslogin/loggedin/:postId' element={<PostToReplyPage />}/>
