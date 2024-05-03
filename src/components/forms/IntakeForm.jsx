@@ -1,15 +1,11 @@
 import { useState } from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
-import { saveAs } from 'file-saver';
 import { jsPDF } from 'jspdf';
-import sgMail from '@sendgrid/mail';
-
 
 const IntakeForm = () => {
     const [key, setKey] = useState('page1');
     const [formData, setFormData] = useState({});
     const [consentChecked, setConsentChecked] = useState(false);
-
 
     const handleSelect = (k) => {
         setKey(k);
@@ -21,28 +17,44 @@ const IntakeForm = () => {
             alert('Please review all information entered before you consent to submit the form in the "Submit Intake" tab.');
             return;
         }
-    
-        // Collect form data using FormData
+        // collect form data using FormData
         const formData = new FormData(e.target);
         const data = {};
         formData.forEach((value, key) => {
             data[key] = value;
         });
         setFormData(data);
-    
-        // Generate PDF with form data
+
+        // generate PDF with form data
         const pdfData = generatePDF(data);
-    
-        // Send email with form data
-        sendEmail(pdfData);
+
+        uploadFile(pdfData);
     };
-    
-    
+
+    const uploadFile = async (pdfData) => {
+        const formData = new FormData();
+        formData.append('file', pdfData);
+
+        try {
+            const response = await fetch('https://file.io/', {
+                method: 'POST',
+                body: formData,
+                id: 'a988d0b4-8cee-498c-95d2-8d93acde594f'
+            });
+            if (!response.ok) {
+                throw new Error('Upload failed');
+            }
+            alert('Form submitted successfully!');
+        } catch (error) {
+            console.error('Error uploading file:', error);
+            alert('Sorry, failed to submit form. Please try again later or email the completed pdf directly to: esc.advocate@gmail.com');
+        }
+    };
 
     const generatePDF = (formData) => {
         const doc = new jsPDF();
         let y = 20;
-    
+
         const sections = [
             { title: 'Basic Demographics', fields: ['firstName', 'middleName', 'lastName', 'alias', 'genderIdentity', 'preferredPronouns', 'ethnicity', 'primaryLanguage', 'preferredLanguage', 'maritalStatus', 'dob', 'countryOfOrigin', 'currentAddress', 'residencyduration', 'pastresidency', 'currentResidency', 'currentResidencyDuration', 'pastShelter', 'safePhone', 'voiceMail', 'safeEmail'] },
             { title: 'Medical/Legal', fields: ['medicalConditions', 'medications', 'healthInsurance', 'pastInjuries', 'pcp', 'legal', 'substance', 'criminal'] },
@@ -51,16 +63,16 @@ const IntakeForm = () => {
             { title: 'History', fields: ['relationshipHistory'] },
             { title: 'Other Info', fields: ['otherInfo'] },
         ];
-    
+
         sections.forEach((section, index) => {
             if (index > 0) {
                 doc.addPage();
                 y = 20;
             }
-    
+
             doc.text(20, y, section.title, { fontSize: 10 });
             y += 10;
-    
+
             // Iterate over the fields in the section and add them to the PDF
             section.fields.forEach((field) => {
                 const value = formData[field];
@@ -80,51 +92,15 @@ const IntakeForm = () => {
                 }
             });
         });
-        doc.output('datauristring');
+        const pdfData = doc.output('blob');
         // Save the concatenated PDF
         doc.save("intake_form.pdf");
+        return pdfData;
     };
-    
-    
-    
 
-    const sendEmail = async (pdfData) => {
-        const formData = {
-            from_email: 'buhaymalaya@icloud.com',  
-            to_emails: 'buhaymalaya@icloud.com',  
-            subject: 'Intake Form Submission',
-            pdf_data: pdfData,
-            html_content: `Intake Form Submission:<br>
-            Please see attached intake form. 
-            Upon careful review, forward document 
-            to respective DV shelters/safehouses. 
-            Thank you!<br>
-                            --- End of Form ---<br>`
-        };
-        try {
-            const response = await fetch('https://capstone-draft-flask.onrender.com/send-pdf', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ pdfData }),
-            });
-    
-            if (!response.ok) {
-                throw new Error('Network response error');
-
-            }
-            const data = await response.json();
-            console.log('PDF sent successfully:', data);
-            alert('PDF sent successfully')
-        } catch (error) {
-            console.error('There was a problem sending the email:', error);
-            alert('There was a problem sending the PDF')
-        }
-    };
     
     
-
+    
     return (
         <div className="container">
             <hr /> <h4 style={{ textAlign: 'center' }}>[ Intake Form ]</h4> <hr />
@@ -365,6 +341,6 @@ First Incident of DV with POH
 
 
     );
-};
 
+};
 export default IntakeForm;

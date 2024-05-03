@@ -14,7 +14,7 @@ export default function HomeDecoy() {
 
       <Container className="about-decoy" style={{ width: '550px', height: '420px', overflow: 'hidden' }}>
 
-      <iframe src="https://trinket.io/embed/pygame/9f0dfcef73?outputOnly=true" width="80%" height="370" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen style={{ position: 'relative', left: '2px', top: '15px' }}></iframe>
+      <iframe src="https://trinket.io/embed/pygame/9f0dfcef73?outputOnly=true" width="80%" height="370" frameBorder="0" marginwidth="0" marginHeight="0" allowFullscreen style={{ position: 'relative', left: '2px', top: '15px' }}></iframe>
 
       {/* <MazeDecoy /> */}
        {/* <MazeGameComponent /> */}
