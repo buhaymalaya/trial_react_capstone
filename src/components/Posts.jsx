@@ -40,6 +40,7 @@ export default function Posts() {
                 <table className="discussion-table">
                     <thead>
                         <tr>
+                            <th>Username</th>
                             <th>Title</th>
                             <th>Body</th>
                             <th>Published</th>
@@ -52,6 +53,7 @@ export default function Posts() {
                                     <td>
                                         <Link to={`/discusslogin/loggedin/${post.id}`}>{post.title}</Link>
                                     </td>
+                                    <td>{user.username}</td> 
                                     <td>{post.body}</td>
                                     <td>{post.time_created}</td> 
                                 </tr>
@@ -59,11 +61,15 @@ export default function Posts() {
                                     <td className="vertical-line"></td>
                                     <td className="vertical-line"></td>
                                     <td className="vertical-line"></td>
+                                    <td className="vertical-line"></td>
+
                                 </tr>
                                 {post.replies.map(reply => (
                                     <React.Fragment key={`reply-${reply.id}`}>
                                         <tr className="reply">
                                             <td colSpan="3">{reply.body}</td>
+                                            <td colSpan="3">{user.username}</td>
+
                                         </tr>
                                         <tr>
                                             <td className="vertical-line"></td>
