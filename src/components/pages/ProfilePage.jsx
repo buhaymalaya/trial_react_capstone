@@ -6,6 +6,7 @@ import BodyLoggedIn from '../BodyLoggedIn';
 import ProfileForm from '../forms/ProfileForm';
 import DeleteProfileForm from '../forms/DeleteProfileForm';
 import NavLogged from '../NavLogged'
+import ShowProfileForm from '../forms/ShowProfileForm';
 
 export default function ProfilePage() {
     const { user } = useContext(UserContext);
@@ -14,8 +15,7 @@ export default function ProfilePage() {
         <Container className='about-decoy'>
             <NavLogged />
             <marquee>Click [esc] at the top left to return to decoy maze game. Do NOT use the application around your POH. Only return when safe.</marquee>
-
-            {/* <UserDetailsTable /> */}
+            <ShowProfileForm />
             <ProfileForm />
             <DeleteProfileForm />
         </Container>

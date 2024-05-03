@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext, useRef } from "react";
 import { Container } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
-import { UserContext } from "../contexts/UserContext.jsx";
+import { UserContext } from "../contexts/UserContext";
 
 export default function ProfileForm() {
     const { user } = useContext(UserContext);
@@ -62,7 +62,7 @@ export default function ProfileForm() {
             <h5>[ Edit Your Profile ]</h5> <hr />
             <form onSubmit={handleUpdateFormSubmit}>
  
-    <label htmlFor="username">username:</label>
+    <label htmlFor="username">username:</label> <br />
     <input
         type="text"
         name="username"
@@ -72,7 +72,7 @@ export default function ProfileForm() {
     />
 
     <hr />
-    <label htmlFor="email">email:</label>
+    <label htmlFor="email">email:</label> <br />
     <input
         type="email"
         name="email"
@@ -82,7 +82,7 @@ export default function ProfileForm() {
     />
 
     <hr />
-    <label htmlFor="password">current password:</label>
+    <label htmlFor="password">current password:</label><br />
     <input
         type="password"
         name="password"
@@ -92,7 +92,7 @@ export default function ProfileForm() {
     />   
 
     <hr />
-    <label htmlFor="first-name">first name:</label>
+    <label htmlFor="first-name">first name:</label><br />
     <input
         type="text"
         name="first-name"
@@ -101,7 +101,7 @@ export default function ProfileForm() {
     />
 
     <hr />
-    <label htmlFor="last-name">last Name:</label>
+    <label htmlFor="last-name">Last Name:</label><br />
     <input
         type="text"
         name="last-name"
@@ -110,7 +110,7 @@ export default function ProfileForm() {
     />
 
     <hr />
-    <label htmlFor="zip-code">zip code:</label>
+    <label htmlFor="zip-code">zip code:</label><br />
     <input
         type="integer"
         name="zip-code"

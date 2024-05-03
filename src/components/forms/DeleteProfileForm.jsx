@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { useNavigate } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 
 export default function DeleteProfileForm() {
   const { user } = useContext(UserContext);
@@ -28,16 +29,21 @@ export default function DeleteProfileForm() {
           navigate("/");
         }
       } else {
-        alert("Failed to delete user. You may not be an authorized user.");
+        alert("Failed to delete account. You may not be an authorized user.");
         throw new Error(`Failed to delete user: ${res.statusText}`);
       }
     } catch (error) {
-      alert(`Failed to delete user: ${error.message}`);
+      alert("Failed to delete account: You may have posted a thread or reply on the discussion board.");
       console.error('Failed to delete user:', error);
     }
   };
 
   return (
+    <Container className='about-decoy'>
+    <h5>[ Delete Profile ]</h5> <br />
+    <p>NOTE: You are only able to delete your account if you have not posted a thread or reply on the discussion board.</p> <hr />
+
     <button type="button" onClick={deleteUser}>delete account</button>
+    </Container>
   );
 };

@@ -113,74 +113,76 @@ const IntakeForm = () => {
 
                         <h5 style={{ textAlign: 'center' }}>Personal Information:</h5> <hr />
 
-                        <label htmlFor="firstName">First Name:
-                        </label>
+                        <label htmlFor="firstName">First Name:</label>
+                        <br />
                         <input type="text" id="firstName" name="firstName" required /> <hr />
 
                         <label htmlFor="middleName">Middle Name:</label>
+                        <br />
+
                         <input type="text" id="middleName" name="middleName" required /> <hr />
 
-                        <label htmlFor="lastName">Last Name:</label>
+                        <label htmlFor="lastName">Last Name:</label> <br />
                         <input type="text" id="lastName" name="lastName" required /> <hr />
 
-                        <label htmlFor="alias">Aliases/Former Names:</label>
+                        <label htmlFor="alias">Aliases/Former Names:</label><br />
                         <input type="text" id="alias" name="alias" required /> <hr />
 
-                        <label htmlFor="genderIdentity">Gender Identity:</label>
+                        <label htmlFor="genderIdentity">Gender Identity:</label><br />
                         <input type="text" id="genderIdentity" name="genderIdentity" required /> <hr />
 
-                        <label htmlFor="preferredPronouns">Preferred Pronouns:</label>
+                        <label htmlFor="preferredPronouns">Preferred Pronouns:</label><br />
                         <input type="text" id="preferredPronouns" name="preferredPronouns" required /> <hr />
 
-                        <label htmlFor="ethnicity">Ethnicity:</label>
+                        <label htmlFor="ethnicity">Ethnicity:</label><br />
                         <input type="text" id="ethnicity" name="ethnicity" required /> <hr />
 
-                        <label htmlFor="primaryLanguage">Primary Language:</label>
+                        <label htmlFor="primaryLanguage">Primary Language:</label><br />
                         <input type="text" id="primaryLanguage" name="primaryLanguage" required /> <hr />
 
-                        <label htmlFor="preferredLanguage">Preferred Language:</label>
+                        <label htmlFor="preferredLanguage">Preferred Language:</label><br />
                         <input type="text" id="preferredLanguage" name="preferredLanguage" required /> <hr />
 
-                        <label htmlFor="maritalStatus">Marital Status:</label>
+                        <label htmlFor="maritalStatus">Marital Status:</label><br />
                         <input type="text" id="maritalStatus" name="maritalStatus" required /> <hr />
 
-                        <label htmlFor="dob">Date of Birth:</label>
+                        <label htmlFor="dob">Date of Birth:</label><br />
                         <input type="date" id="dob" name="dob" required /> <hr />
 
-                        <label htmlFor="countryOfOrigin">Country of Origin:</label>
+                        <label htmlFor="countryOfOrigin">Country of Origin:</label><br />
                         <input type="text" id="countryOfOrigin" name="countryOfOrigin" required /> <hr />
 
                         <h5 style={{ textAlign: 'center' }}>Residency Information:</h5> <hr />
 
-                        <label htmlFor="currentAddress">Current Address (Indicate if Living with POH):</label>
+                        <label htmlFor="currentAddress">Current Address (Indicate if Living with POH):</label><br />
                         <input type="text" id="currentAddress" name="currentAddress" required /> <hr />
 
-                        <label htmlFor="residencyduration">For how long (Include # of months/years):</label>
+                        <label htmlFor="residencyduration">For how long (Include # of months/years):</label><br />
                         <input type="text" id="residencyduration" name="residencyduration" required /> <hr />
 
                         <h5 style={{ textAlign: 'center' }}>If You are Currently Experiencing Homelessness:</h5> <hr />
 
-                        <label htmlFor="pastresidency">Past Addresses and Dates (separated by a comma):</label>
+                        <label htmlFor="pastresidency">Past Addresses and Dates (separated by a comma):</label><br />
                         <input type="text" id="pastresidency" name="pastresidency" required /> <hr />
 
-                        <label htmlFor="currentResidency">Where/With Whom are You Living With:</label>
+                        <label htmlFor="currentResidency">Where/With Whom are You Living With:</label><br />
                         <input type="text" id="currentResidency" name="currentResidency" required /> <hr />
 
-                        <label htmlFor="currentResidencyDuration">Duration of Tenancy:</label>
+                        <label htmlFor="currentResidencyDuration">Duration of Tenancy:</label><br />
                         <input type="text" id="currentResidencyDuration" name="currentResidencyDuration" required /> <hr />
 
                         <label htmlFor="pastShelter">Have You Been in a Shelter Before? <br /> (Indicate Dates and Names of Shelters):</label>
-                        <input type="text" id="pastShelter" name="pastShelter" required /> <hr />
+                        <br /><input type="text" id="pastShelter" name="pastShelter" required /> <hr />
 
                         <h5 style={{ textAlign: 'center' }}>Contact Information:</h5> <hr />
 
-                        <label htmlFor="safePhone">Safe Phone Number:</label>
+                        <label htmlFor="safePhone">Safe Phone Number:</label><br />
                         <input type="text" id="safePhone" name="safePhone" required /> <hr />
 
-                        <label htmlFor="voiceMail">Safe to Leave a Voicemail? (Y/N):</label>
+                        <label htmlFor="voiceMail">Safe to Leave a Voicemail? (Y/N):</label><br />
                         <input type="text" id="voiceMail" name="voiceMail" required /> <hr />
 
-                        <label htmlFor="safeEmail">Safe Email Address:</label>
+                        <label htmlFor="safeEmail">Safe Email Address:</label><br />
                         <input type="text" id="safeEmail" name="safeEmail" required /> <hr />
 
 
@@ -191,30 +193,32 @@ const IntakeForm = () => {
                 <Tab eventKey="page2" title="Medical/Legal">
                         <p>Note: Please ensure all fields are complete and accurate. Type N/A if it does not apply to you.</p> <hr />
 
-                        <label htmlFor="medicalConditions">Medical Conditions:</label>
-                        <input type="text" id="medicalConditions" name="medicalConditions" /> <hr />
+                        <h5 style={{ textAlign: 'center' }}>Medical Information:</h5> <hr />
 
-                        <label htmlFor="medications">Medications/Therapy:</label>
+                        <label htmlFor="medicalConditions">Medical Conditions:</label><br />
+                        <input type="text" id="medicalConditions" name="medicalConditions" /> <hr /> 
+
+                        <label htmlFor="medications">Medications/Therapy:</label><br />
                         <input type="text" id="medications" name="medications" /> <hr />
 
-                        <label htmlFor="healthInsurance">Health Insurance (if any):</label>
+                        <label htmlFor="healthInsurance">Health Insurance (if any):</label><br />
                         <input type="text" id="healthInsurance" name="healthInsurance" /> <hr />
 
-                        <label htmlFor="pastInjuries">Past Injuries/Dates (by POH):</label>
+                        <label htmlFor="pastInjuries">Past Injuries/Dates (by POH):</label><br />
                         <input type="text" id="pastInjuries" name="pastInjuries" /> <hr />
 
-                        <label htmlFor="pcp">Primary Doctor? (Y/N):</label>
+                        <label htmlFor="pcp">Primary Doctor? (Y/N):</label><br />
                         <input type="text" id="pcp" name="pcp" /> <hr />
 
-                        <h5 style={{ textAlign: 'center' }}>Legal Info</h5> <hr />
+                        <h5 style={{ textAlign: 'center' }}>Legal Information: </h5> <hr />
 
-                        <label htmlFor="legal">Current Legal Proceedings/Dates:</label>
+                        <label htmlFor="legal">Current Legal Proceedings/Dates:</label><br />
                         <input type="text" id="legal" name="legal" /> <hr />
 
-                        <label htmlFor="substance">Substance Use/History (if any):</label>
+                        <label htmlFor="substance">Substance Use/History (if any):</label><br />
                         <input type="text" id="substance" name="substance" /> <hr />
 
-                        <label htmlFor="criminal">Criminal History (if any):</label>
+                        <label htmlFor="criminal">Criminal History (if any):</label><br />
                         <input type="text" id="criminal" name="criminal" /> <hr />
 
                         <button onClick={() => setKey('page3')}>Next</button> <br /> <br />
@@ -225,22 +229,22 @@ const IntakeForm = () => {
 
                         <p>Note: Please ensure all fields are complete and accurate. Type N/A if it does not apply to you.</p> <hr />
 
-                        <label htmlFor="childrenNames">Children's Names (separated by commas):</label>
+                        <label htmlFor="childrenNames">Children's Names (separated by commas):</label><br />
                         <input type="text" id="childrenNames" name="childrenNames" /> <hr />
 
-                        <label htmlFor="childrenDOB">Children's DOB (separated by commas):</label>
+                        <label htmlFor="childrenDOB">Children's DOB (separated by commas):</label><br />
                         <input type="text" id="childrenDOB" name="childrenDOB" /> <hr />
 
-                        <label htmlFor="childCustody">Child Custody Status:</label>
+                        <label htmlFor="childCustody">Child Custody Status:</label><br />
                         <input type="text" id="childCustody" name="childCustody" /> <hr />
 
-                        <label htmlFor="POHparent">Is POH other parent of children? (Indicate Names):</label>
+                        <label htmlFor="POHparent">Is POH other parent of children? (Indicate Names):</label><br />
                         <input type="text" id="POHparent" name="POHparent" /> <hr />
 
-                        <label htmlFor="childHealth">Children's Health/Medical Conditions:</label>
+                        <label htmlFor="childHealth">Children's Health/Medical Conditions:</label><br />
                         <input type="text" id="childHealth" name="childHealth" /> <hr />
 
-                        <label htmlFor="school">Children's School/s Attending:</label>
+                        <label htmlFor="school">Children's School/s Attending:</label><br />
                         <input type="text" id="school" name="school" /> <hr />
 
 
@@ -252,32 +256,32 @@ const IntakeForm = () => {
 
                         <p>Note: Please ensure all fields are complete and accurate. Type N/A if it does not apply to you.</p> <hr />
 
-                        <label htmlFor="pohName">POH's Full Name:</label>
+                        <label htmlFor="pohName">POH's Full Name:</label><br />
                         <input type="text" id="pohName" name="pohName" /> <hr />
 
-                        <label htmlFor="relationship">Relationship to POH:</label>
+                        <label htmlFor="relationship">Relationship to POH:</label><br />
                         <input type="text" id="relationship" name="relationship" /> <hr />
 
-                        <label htmlFor="pohDOB">POH's DOB:</label>
+                        <label htmlFor="pohDOB">POH's DOB:</label><br />
                         <input type="date" id="pohDOB" name="pohDOB" /> <hr />
 
-                        <label htmlFor="pohEmployment">Place of Employment:</label>
+                        <label htmlFor="pohEmployment">Place of Employment:</label><br />
                         <input type="text" id="pohEmployment" name="pohEmployment" /> <hr />
 
-                        <label htmlFor="pohAddress">Current Address:</label>
+                        <label htmlFor="pohAddress">Current Address:</label><br />
                         <input type="text" id="pohAddress" name="pohAddress" /> <hr />
 
-                        <label htmlFor="pohZips">Zip Codes of POH's Friends/Families:</label>
+                        <label htmlFor="pohZips">Zip Codes of POH's Friends/Families:</label><br />
                         <input type="text" id="pohZips" name="pohZips" /> <hr />
 
-                        <label htmlFor="pohSubstance">Substance Abuse History:</label>
+                        <label htmlFor="pohSubstance">Substance Abuse History:</label><br />
                         <input type="text" id="pohSubstance" name="pohSubstance" /> <hr />
 
-                        <label htmlFor="pohCriminal">POH's Criminal Records:</label>
+                        <label htmlFor="pohCriminal">POH's Criminal Records:</label><br />
                         <input type="text" id="pohCriminal" name="pohCriminal" /> <hr />
 
                         <label htmlFor="pohProperty">Does POH own any of your property? <br />
-                            (car, phone, joint bank accounts, etc):</label>
+                            (car, phone, joint bank accounts, etc):</label><br />
                         <input type="text" id="pohProperty" name="pohProperty" /> <hr />
 
 
@@ -286,7 +290,8 @@ const IntakeForm = () => {
 
                 <Tab eventKey="page5" title="Relationship History">
 
-                        <p>Describe in detail your relationship history and timeline of abuse from your POH. Include dates and locations. Start with the most recent domestic violence incident and if the police were involved. Include any police records/restraining orders established. Remember that intimate partner violence (IPV) or domestic violence (DV) not only includes physical violence but also emotional, psychological, financial, emotional. The main goal of IPV is exertion of power and control on an individual that may include their family/children.</p> <hr />
+                        <p>Describe in detail your relationship history and timeline of abuse from your POH. Include dates and locations. Start with the most recent domestic violence incident and if the police were involved. Include any police records/restraining orders established. 
+                        <br /><br />Remember that intimate partner violence (IPV) or domestic violence (DV) not only includes physical violence but also emotional, psychological, financial, emotional. The main goal of IPV is exertion of power and control on an individual that may include their family/children.</p> <hr />
 
                         <label htmlFor="relationshipHistory">Relationship/DV History:</label> <br /> <br />
                         <textarea id="relationshipHistory" name="relationshipHistory" rows="20" style={{ width: '100%' }} placeholder='For example:

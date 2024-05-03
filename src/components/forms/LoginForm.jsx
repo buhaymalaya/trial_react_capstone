@@ -40,9 +40,12 @@ export default function LoginForm() {
             navigate('loggedin')
             alert(`User: ${userLogin.username} logged in`)
             
-        } else console.error("Please check your username/password. Try again.")
-        // alert("Please check your username/password. Try again.")
+        } else {
+        console.error("Please check your username/password. Try again.");
+        alert("Please check your username/password. Try again.");
     }
+    
+}
 
     function handleLoginFormSubmit(e){
         e.preventDefault();
