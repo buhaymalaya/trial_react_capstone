@@ -2,6 +2,10 @@ import { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { UserContext } from '../contexts/UserContext';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import './Toast.css'
+
 
 export default function EditPostForm() { 
     const { user } = useContext(UserContext);
@@ -31,14 +35,14 @@ export default function EditPostForm() {
                 body: JSON.stringify({ "title": postTitle, "body": newContent }),
             });
             if (res.ok) {
-                alert("Post updated successfully.");
+                toast.success("Post updated successfully.");
                 console.log('Post updated successfully');
             } else {
-                alert("Failed to update post. You may not be an authorized user.");
+                toast("Failed to update post. You may not be an authorized user.");
                 console.error('Failed to update post:', res.statusText);
             }
         } catch (error) {
-            alert("Failed to update post. Try again.");
+            toast("Failed to update post. Try again.");
             console.error('Failed to update post:', error.message);
         }
     };
@@ -47,6 +51,8 @@ export default function EditPostForm() {
         <Container className='about-decoy'>
             <form onSubmit={handleSubmit}>
                 <h5>[ update post ]</h5> <hr />
+                <p>NOTE: You are only able to update the post if you are the author.</p>
+
                 <input 
                     type="text" 
                     value={postTitle} 

@@ -19,7 +19,7 @@ import { searchAPI } from './211api.jsx'
 import ProfilePage from './components/pages/ProfilePage.jsx'
 // import ProfileEditPage from './components/pages/ProfileEditPage.jsx'
 // import DeleteProfileForm from './components/forms/DeleteProfileForm.jsx'
-import UserDetailsTable from './components/UserDetailsTable.jsx'
+// import UserDetailsTable from './components/UserDetailsTable.jsx'
 import YouAreLoggedIn from './components/pages/YouAreLoggedIn.jsx'
 
 export default function App() {
@@ -57,7 +57,7 @@ export default function App() {
 
         {/* <Route path='/user/:userId' element={<ProfileEditPage />}/> */}
         {/* <Route path="/user/:id/delete" component={DeleteProfileForm} /> */}
-        <Route path="/user/:id" component={UserDetailsTable} />
+        {/* <Route path="/user/:id" component={UserDetailsTable} /> */}
 
 
 

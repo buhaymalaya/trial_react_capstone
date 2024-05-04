@@ -1,6 +1,9 @@
 import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import './Toast.css'
 
 export default function DeletePostForm() {
   const { user } = useContext(UserContext);
@@ -16,19 +19,24 @@ export default function DeletePostForm() {
         },
       });
       if (res.ok) {
-        alert("Post deleted successfully.");
+        toast.success("Post deleted successfully.");
       } else {
-        alert("Failed to delete post. You may not be an authorized user.");
+        toast("Failed to delete post. You may not be an authorized user.");
         throw new Error(`Failed to delete post: ${res.statusText}`);
       }
     } catch (error) {
-      alert(`Failed to delete post: ${error.message}`);
+      toast(`Failed to delete post: ${error.message}`);
       console.error('Failed to delete post:', error);
     }
   };
 
   return (
+    <div>
+      <hr />
+    <p>NOTE: You are only able to delete the post if you are the author.</p>
     <button type="button" onClick={handleDelete}>delete post</button>
+    
+</div>
   );
 };
 

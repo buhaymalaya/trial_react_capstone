@@ -2,6 +2,9 @@ import { useEffect, useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 import { Container } from "react-bootstrap";
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import './Toast.css'
 
 export default function PostToReplyForm() {
     const { user } = useContext(UserContext);
@@ -22,10 +25,10 @@ export default function PostToReplyForm() {
                     const data = await response.json();
                     setPost(data);
                 } else {
-                    alert('Failed to fetch post:', response.statusText);
+                    toast('Failed to fetch post:', response.statusText);
                 }
             } catch (error) {
-                alert('Failed to fetch post:', error.message);
+                toast('Failed to fetch post:', error.message);
             }
         }
 

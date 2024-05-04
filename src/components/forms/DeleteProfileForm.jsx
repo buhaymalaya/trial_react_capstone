@@ -2,6 +2,9 @@ import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { useNavigate } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import './Toast.css'
 
 export default function DeleteProfileForm() {
   const { user } = useContext(UserContext);
@@ -25,15 +28,15 @@ export default function DeleteProfileForm() {
           "Are you sure you want to delete your account? This action cannot be undone."
         );
         if (confirmation) {
-          alert("User deleted successfully.");
+          toast.success("User deleted successfully.");
           navigate("/");
         }
       } else {
-        alert("Failed to delete account. You may not be an authorized user.");
+        toast("Failed to delete account. You may not be an authorized user.");
         throw new Error(`Failed to delete user: ${res.statusText}`);
       }
     } catch (error) {
-      alert("Failed to delete account: You may have posted a thread or reply on the discussion board.");
+      toast("Failed to delete account: You may have posted a thread or reply on the discussion board.");
       console.error('Failed to delete user:', error);
     }
   };

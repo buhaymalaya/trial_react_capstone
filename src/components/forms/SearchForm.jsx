@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
 import SearchResultsTable from '../SearchResultsTable';
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import './Toast.css'
+
 
 const SearchForm = ({ onSearch }) => {
     const [keyword, setKeyword] = useState('');
@@ -23,11 +27,11 @@ const SearchForm = ({ onSearch }) => {
                 const data = await res.json();
                 setSearchResults(data); // Update searchResults state with search results data
             } else {
-                alert("Failed to find posts")
+                toast("Failed to find posts")
                 console.error('Failed to fetch search results:', res.statusText);
             }
         } catch (error) {
-            alert("Failed to find posts")
+            toast("Failed to find posts")
             console.error('Failed to fetch search results:', error.message);
         }
     };

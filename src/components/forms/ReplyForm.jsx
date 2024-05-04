@@ -2,6 +2,10 @@ import { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 import { Container } from "react-bootstrap";
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import './Toast.css'
+
 
 const ReplyForm = () => {
     const { user } = useContext(UserContext);
@@ -26,14 +30,14 @@ const ReplyForm = () => {
             });
 
             if (response.ok) {
-                alert('Reply submitted successfully');
+                toast('Reply submitted successfully');
             } else {
-                alert('Failed to submit reply');
+                toast('Failed to submit reply');
                 console.error('Failed to submit reply:', error);
 
             }
         } catch (error) {
-            alert('Failed to submit reply');
+            toast('Failed to submit reply');
             console.error('Failed to submit reply:', error);
 
         }
@@ -43,7 +47,7 @@ const ReplyForm = () => {
         <Container className="about-decoy">
         <form onSubmit={handleSubmit}>
             <div>
-                <label htmlFor="body">Your Reply:</label><br />
+                <label htmlFor="body">Your Reply:</label><br /><br />
                 <textarea
                     id="body"
                     name="body"
@@ -52,7 +56,7 @@ const ReplyForm = () => {
                     required
                 ></textarea>
             </div>
-          
+          <br />
             <div>
                 <button type="submit">reply</button>
             </div>

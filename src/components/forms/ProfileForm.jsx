@@ -2,6 +2,9 @@ import { useState, useEffect, useContext, useRef } from "react";
 import { Container } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import './Toast.css'
 
 export default function ProfileForm() {
     const { user } = useContext(UserContext);
@@ -35,13 +38,13 @@ export default function ProfileForm() {
             if (res.ok) {
                 const data = await res.json();
                 console.log(data);
-                alert("Profile updated successfully.");
+                toast("Profile updated successfully.");
             } else {
                 console.error("Update failed. Please try again");
             }
         } catch (error) {
             console.error("Update failed. Please try again:", error.message);
-            alert("Profile updated successfully.");
+            toast("Update failed. Please try again.");
 
         }
     }

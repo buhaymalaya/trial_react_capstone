@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
 import { jsPDF } from 'jspdf';
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import './Toast.css'
+
 
 const IntakeForm = () => {
     const [key, setKey] = useState('page1');
@@ -14,7 +18,7 @@ const IntakeForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!consentChecked) {
-            alert('Please review all information entered before you consent to submit the form in the "Submit Intake" tab.');
+            toast('Please review all information entered before you consent to submit the form in the "Submit Intake" tab.');
             return;
         }
         // collect form data using FormData
@@ -44,10 +48,10 @@ const IntakeForm = () => {
             if (!response.ok) {
                 throw new Error('Upload failed');
             }
-            alert('Form submitted successfully!');
+            toast.success('Form submitted successfully!');
         } catch (error) {
             console.error('Error uploading file:', error);
-            alert('Sorry, failed to submit form. Please try again later or email the completed pdf directly to: esc.advocate@gmail.com');
+            toast('Sorry, failed to submit form. Please try again later or email the completed pdf directly to: esc.advocate@gmail.com');
         }
     };
 

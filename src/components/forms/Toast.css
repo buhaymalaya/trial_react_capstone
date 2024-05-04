@@ -1,0 +1,15 @@
+.Toastify__toast-container {
+    background-color: black;
+    
+  }
+  
+  .Toastify__toast {
+    color: white;
+    box-shadow: none;
+    border-radius: 0;
+    background-color: black;
+    border-radius: 0;
+    min-height: 40px; 
+    padding: 10px; 
+    font-size: 14px; 
+  }
