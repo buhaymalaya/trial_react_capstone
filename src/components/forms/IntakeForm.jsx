@@ -10,6 +10,8 @@ const IntakeForm = () => {
     const [key, setKey] = useState('page1');
     const [formData, setFormData] = useState({});
     const [consentChecked, setConsentChecked] = useState(false);
+   
+
 
     const handleSelect = (k) => {
         setKey(k);
@@ -38,12 +40,16 @@ const IntakeForm = () => {
     const uploadFile = async (pdfData) => {
         const formData = new FormData();
         formData.append('file', pdfData);
-
+    
+        const apiKey = import.meta.env.VITE_API_KEY;
+        console.log(apiKey)
         try {
             const response = await fetch('https://file.io/', {
                 method: 'POST',
                 body: formData,
-                id: 'a988d0b4-8cee-498c-95d2-8d93acde594f'
+                headers: {
+                "Authorization": apiKey
+                }
             });
             if (!response.ok) {
                 throw new Error('Upload failed');
