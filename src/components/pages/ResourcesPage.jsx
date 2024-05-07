@@ -27,7 +27,7 @@ const ResourcesPage = () => {
           <hr />
           <p>Search for more resources: (i.e. DV shelter 90501)</p>
           <div className="gcse-search"></div>
-          <hr />
+          
           <ResourceLinks />
         </div>
       </BodyActual>

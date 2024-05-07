@@ -21,7 +21,8 @@ export default function HomeActual() {
                 Log in and visit each tab for more info.
                 <br />  <br />
 
-
+                <hr />
+                Questions/Feedback: esc.advocate@gmail.com
 
 
             </div>
