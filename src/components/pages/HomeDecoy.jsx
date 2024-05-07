@@ -10,8 +10,8 @@ export default function HomeDecoy() {
       
     <BodyDecoy NavDecoy >
     <p style={{ textAlign: 'center' }}>Note: You can only play the maze using arrow keys on your keyboard.</p>
-<hr />
-    <p style={{ textAlign: 'center' }}>Click 'Run' to play / 'Stop' to refresh.</p>
+
+    <p style={{ textAlign: 'center' }}>Click 'Run' to play or 'Stop' to refresh.</p>
 
       <Container className="about-decoy" style={{ width: '550px', height: '420px', overflow: 'hidden' }}>
 
