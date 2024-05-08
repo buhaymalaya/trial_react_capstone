@@ -5,8 +5,9 @@ const CustomNavbar = () => {
   return (
     <Navbar bg="dark" expand="lg" variant="dark">      
     <Container>
-        <Navbar.Brand href="/">[esc]</Navbar.Brand>
-        
+        <Navbar.Brand>
+          <Link to="/" style={{ color: "white", textDecoration: "none" }}>[esc]</Link>
+        </Navbar.Brand>              
       
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

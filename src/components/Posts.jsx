@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Table } from "react-bootstrap";
 import { Link } from "react-router-dom"; // 
 import { UserContext } from "./contexts/UserContext";
 
 export default function Posts() {
     const { user } = useContext(UserContext);
+    // const username = user.username;
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -37,45 +38,36 @@ export default function Posts() {
             {loading ? (
                 <p>Loading...</p>
             ) : (
-                <table className="discussion-table">
+                <Table striped bordered hover className="discussion-table">
                     <thead>
                         <tr>
-                            <th>Title</th>
-                            <th>Body</th>
-                            <th>Published</th>
+                            <th style={{ backgroundColor: "black", color: "white", borderColor: "white" }}>UserID</th>
+                            <th style={{ backgroundColor: "black", color: "white", borderColor: "white"  }}>Title</th>
+                            <th style={{ backgroundColor: "black", color: "white", borderColor: "white"  }}>Body</th>
+                            <th style={{ backgroundColor: "black", color: "white", borderColor: "white"  }}>Published</th>
                         </tr>
                     </thead>
                     <tbody>
                         {posts.map(post => (
                             <React.Fragment key={post.id}>
                                 <tr className="post">
-                                    <td>
-                                        <Link to={`/discusslogin/loggedin/${post.id}`}>{post.title}</Link>
+                                    <td style={{ backgroundColor: "black", color: "white", borderColor: "white"  }}>{post.user_id}</td>
+                                    <td style={{ backgroundColor: "black", color: "white", borderColor: "white"  }}>
+                                        <Link to={`/discusslogin/loggedin/${post.id}`} style={{ textDecoration: "none" }}>{post.title}</Link>
                                     </td>
-                                    <td>{post.body}</td>
-                                    <td>{post.time_created}</td> 
-                                </tr>
-                                <tr>
-                                    <td className="vertical-line"></td>
-                                    <td className="vertical-line"></td>
-                                    <td className="vertical-line"></td>
+                                    <td style={{ backgroundColor: "black", color: "white", borderColor: "white"  }}>{post.body}</td>
+                                    <td style={{ backgroundColor: "black", color: "gray", borderColor: "white"  }}>{post.time_created}</td> 
                                 </tr>
                                 {post.replies.map(reply => (
-                                    <React.Fragment key={`reply-${reply.id}`}>
-                                        <tr className="reply">
-                                            <td colSpan="3">{reply.body}</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="vertical-line"></td>
-                                            <td className="vertical-line"></td>
-                                            <td className="vertical-line"></td>
-                                        </tr>
-                                    </React.Fragment>
+                                    <tr key={`reply-${reply.id}`} className="reply" >
+                                        <td style={{backgroundColor: "#1e1e1e", color: "gray", borderColor: "white"}}>{reply.user_id}</td>
+                                        <td colSpan="4" style={{ fontStyle: "italic", backgroundColor: "#1e1e1e", color: "gray", borderColor: "white"  }}>{reply.body}</td>
+                                    </tr>
                                 ))}
                             </React.Fragment>
                         ))}
                     </tbody>
-                </table>
+                </Table>
             )}
         </Container>
     );

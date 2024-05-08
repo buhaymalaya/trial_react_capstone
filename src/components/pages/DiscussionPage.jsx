@@ -24,7 +24,7 @@ export default function DiscussionPage() {
   
 
     return (
-        <Container className="about-decoy">
+        <Container className="">
             <BodyLoggedIn NavLogged>
             <marquee>Click [esc] at the top left to return to decoy maze game. Do NOT use the application around your POH. Only return when safe.</marquee>
             <SearchForm onSearch={handleSearch} />

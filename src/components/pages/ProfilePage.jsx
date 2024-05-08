@@ -12,7 +12,7 @@ export default function ProfilePage() {
     const { user } = useContext(UserContext);
     const userId = user.id;
     return (
-        <Container className='about-decoy'>
+        <Container className=''>
             <NavLogged />
             <marquee>Click [esc] at the top left to return to decoy maze game. Do NOT use the application around your POH. Only return when safe.</marquee>
             <ShowProfileForm />

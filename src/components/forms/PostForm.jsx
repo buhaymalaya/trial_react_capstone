@@ -55,11 +55,11 @@ export default function PostForm() {
     return (
         <Container className="about-decoy">
         <form className="mb-1" onSubmit={handlePostFormSubmit}>
-                <p> [ Community Guidelines: Please be respectful and practice empathy. ]</p>
+                <h5> Community Guidelines: Please be respectful and practice empathy when posting.</h5>
             <hr />
-            <label htmlFor="title">Title</label><br />
+            <label htmlFor="title">Title:</label><br />
             <input type="text" name='title' ref={titleInputRef} style={{ width: '100%', padding: '8px', marginBottom: '16px' }} /><br />
-            <label htmlFor="post-body">Share Your Thoughts</label><br />
+            <label htmlFor="post-body">Share Your Thoughts:</label><br />
             <textarea name="post-body" className="mb-1" ref={postBodyInputRef} style={{ width: '100%', height: '150px', padding: '8px' }} required></textarea><br />
             <button type="submit">post</button>
         </form>

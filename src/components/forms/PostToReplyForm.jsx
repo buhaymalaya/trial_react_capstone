@@ -38,7 +38,7 @@ export default function PostToReplyForm() {
     return (
         <Container className="about-decoy">
             <div>
-                <h5>[ post reply ]</h5> 
+                <h5>[ post reply ]</h5>
                 {post ? (
                     <div className="about-decoy">
                         <h5>Title: {post.title}</h5> <hr />
@@ -51,7 +51,7 @@ export default function PostToReplyForm() {
                                 borderRadius: '0',
                                 borderColor: 'white',
                                 color: 'white'
-                            }} 
+                            }}
                         >
                             reply to topic
                         </Link>                    </div>
