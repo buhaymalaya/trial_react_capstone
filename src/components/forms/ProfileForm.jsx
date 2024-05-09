@@ -44,7 +44,7 @@ export default function ProfileForm() {
             }
         } catch (error) {
             console.error("Update failed. Please try again:", error.message);
-            toast("Update failed. Please try again.");
+            toast("Please log out and log in again to check if user details are up to date.");
 
         }
     }
