@@ -24,7 +24,7 @@ export default function About() {
 
                 <br /> <br /> <br />
 
-                DISCLAIMER: Please note that this does NOT replace the phone screening as each safehouse/shelter has their own set of requirements for acceptance. Video calls may also be an option for those who are unable to speak during the final screening, depending on the shelter's capabilities.
+                DISCLAIMER: Please note that this does NOT replace the phone screening as each safehouse/shelter has their own set of requirements for enrollment. Video calls may also be an option for those who are unable to speak during the final screening, depending on the shelter's capabilities.
                 <br /> 
 
             </div>

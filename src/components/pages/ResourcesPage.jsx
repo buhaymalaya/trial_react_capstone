@@ -40,7 +40,7 @@ const ResourceLinks = () => (
     <ResourceLink title="NATIONAL DOMESTIC VIOLENCE HOTLINE: SPEAK/CHAT WITH AN ADVOCATE" url="https://www.thehotline.org/" />
     <ResourceLink title="988 SUICIDE AND CRISIS LIFELINE" url="https://988lifeline.org/" />
     <ResourceLink title="211: GENERAL INFORMATION (SHELTERS, MENTAL HEALTH, IMMIGRANT HELP)" url="https://www.211.org/" />
-    <hr></hr><p>DEPARTMENT OF SOCIAL SERVICES: FOOD STAMPS/LOW-INCOME HEALTH INSURANCE/CASH AID"</p> <br /> <p>[ varies by state - call 211 or search above ] </p>
+    <hr></hr><p>DEPARTMENT OF SOCIAL SERVICES: FOOD STAMPS/LOW-INCOME HEALTH INSURANCE/CASH AID</p> <br /> <p>[ varies by state - call 211 or search above ] </p>
     <ResourceLink title="STRONG HEARTS NATIVE AMERICAN HELP" url="http://strongheartshelpline.org/" />
     <ResourceLink title="WOMEN'S LAW: STATE-BY-STATE INFO ON LAWS INCLUDING RESTRAINING ORDERS/CHILD CUSTODY" url="https://www.womenslaw.org/" />
     <ResourceLink title="ABUSED DEAF WOMEN'S ADVOCACY SERVICES (ADWAS)" url="https://www.youtube.com/watch?v=ql7zD8X80wE" />
