@@ -11,7 +11,7 @@ export default function About() {
 
                 What is [esc]?
                 <br /> <br />
-                It is a web application created by a Domestic Violence (DV) survivor who is an immigrant from the Philippines. After escape, she became a family advocate for those fleeing abuse after seeking refuge from a DV shelter.
+                It is a web application created by a Domestic Violence (DV) survivor who is an immigrant from the Philippines. After escape, she became a family advocate for those fleeing abuse.
                 <br /> <br /> <br />
                 The purpose of [esc] is to create a safe digital space for survivors and hold a community where they can vent, share experiences, support each other, and disseminate critical information. Survivors are usually isolated from any form of social support by their POH (person of harm) in order to perpetuate and continue the abuse.
                 <br /> <br /> <br />
