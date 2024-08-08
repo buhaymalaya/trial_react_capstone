@@ -18,7 +18,7 @@ const CustomNavbar = () => {
             <Link to="/intakelogin" className='nav-link'>INTAKE</Link>
             <Link to="/resources" className='nav-link'>RESOURCES</Link>
             <Link to="/signup" className='nav-link'>SIGN UP</Link>
-            <Link to="/login" className='nav-link'>LOG IN</Link>
+            <Link to="/login" className='nav-link'>LOGIN</Link>
             <Link to="/profilelogin" className='nav-link'>PROFILE</Link>
 
 
