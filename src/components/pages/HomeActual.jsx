@@ -14,6 +14,8 @@ export default function HomeActual() {
               
                 How to Navigate [esc]?
                 <br />  <br />  <br />
+                Update: At this time, the [esc] team is working diligently to connect with local DV shelters in Los Angeles County to provide this service to those in need.
+                <br />  <br />  <br />
                 Click on the RESOURCES tab to find local/digital help now.
                 <br />  <br />  <br />
                 SIGN UP and LOG IN to access the DISCUSS and INTAKE tool.
