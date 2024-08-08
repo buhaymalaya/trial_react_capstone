@@ -15,7 +15,7 @@ const CustomNavbar = () => {
             <Link to="/discuss" className='nav-link'>DISCUSS</Link>
             <Link to="/intakepage" className='nav-link'>INTAKE</Link>
             <Link to="/profile" className='nav-link'>PROFILE</Link>
-            <Link to="/logout" className='nav-link'>LOG OUT</Link>
+            <Link to="/logout" className='nav-link'>LOGOUT</Link>
 
 
 
