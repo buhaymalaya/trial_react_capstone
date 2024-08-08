@@ -301,7 +301,7 @@ const IntakeForm = () => {
                 <Tab eventKey="page5" title="Relationship History">
 
                         <p>Describe in detail your relationship history and timeline of abuse from your POH. Include dates and locations. Start with the most recent domestic violence incident. If the police were involved, include any police records/restraining orders established. 
-                        <br /><br />Remember that intimate partner violence (IPV) or domestic violence (DV) not only includes physical violence but also emotional, psychological, financial, emotional. The main goal of IPV is exertion of power and control on an individual that may include their family/children.</p> <hr />
+                        <br /><br />Remember that intimate partner violence (IPV) or domestic violence (DV) not only includes physical violence but also emotional, sexual, psychological, spiritual, and financial, among others. The main goal of IPV is exertion of power and control on an individual that may include their family/children.</p> <hr />
 
                         <label htmlFor="relationshipHistory">Relationship/DV History:</label> <br /> <br />
                         <textarea id="relationshipHistory" name="relationshipHistory" rows="20" style={{ width: '100%' }} placeholder='For example:
