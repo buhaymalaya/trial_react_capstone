@@ -197,7 +197,15 @@ const IntakeForm = () => {
                         <h5 style={{ textAlign: 'center' }}>If You are Currently Experiencing Homelessness:</h5> <hr />
 
                         <label htmlFor="pastresidency">Past Addresses and Dates (separated by a comma):</label><br />
-                        <input type="text" id="pastresidency" name="pastresidency" required /> <hr />
+    {/* 8/10 edited to textarea for more char */}
+                        <textarea 
+                        id="pastresidency" 
+                        name="pastresidency"
+                        rows="4"
+                        cols="50"
+                        required
+                        placeholder="Enter past addresses and dates here."  
+                        ></textarea> <hr />
 
                         <label htmlFor="currentResidency">Where/With Whom are You Living With:</label><br />
                         <input type="text" id="currentResidency" name="currentResidency" required /> <hr />
@@ -364,9 +372,7 @@ onChange={(e) => handleChange(e, setCharCountHistory, charLimitHistory)}
                         name="otherInfo" 
                         rows="10" 
                         style={{ width: '100%' }} 
-                        placeholder='Any other relevant information you would like to share about 
-                        the experiences you encountered with your POH as well as your current needs, 
-                        challenges/obstacles, and responsibilities.'
+                        placeholder='Any other relevant information you would like to share about the experiences you encountered with your POH as well as your current needs, challenges/obstacles, and responsibilities.'
     // added on 8/10
                         maxLength={charLimitOtherInfo}
                         onChange={(e) => handleChange(e, setCharCountOtherInfo, charLimitOtherInfo)}
