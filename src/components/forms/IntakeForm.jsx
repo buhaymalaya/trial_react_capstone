@@ -154,13 +154,13 @@ const IntakeForm = () => {
                         <label htmlFor="middleName">Middle Name:</label>
                         <br />
 
-                        <input type="text" id="middleName" name="middleName" required /> <hr />
+                        <input type="text" id="middleName" name="middleName" /> <hr />
 
                         <label htmlFor="lastName">Last Name:</label> <br />
                         <input type="text" id="lastName" name="lastName" required /> <hr />
 
                         <label htmlFor="alias">Aliases/Former Names:</label><br />
-                        <input type="text" id="alias" name="alias" required /> <hr />
+                        <input type="text" id="alias" name="alias" /> <hr />
 
                         <label htmlFor="genderIdentity">Gender Identity:</label><br />
                         <input type="text" id="genderIdentity" name="genderIdentity" required /> <hr />
@@ -184,14 +184,14 @@ const IntakeForm = () => {
                         <input type="date" id="dob" name="dob" required /> <hr />
 
                         <label htmlFor="countryOfOrigin">Country of Origin:</label><br />
-                        <input type="text" id="countryOfOrigin" name="countryOfOrigin" required /> <hr />
+                        <input type="text" id="countryOfOrigin" name="countryOfOrigin" /> <hr />
 
                         <h5 style={{ textAlign: 'center' }}>Residency Information:</h5> <hr />
 
                         <label htmlFor="currentAddress">Current Address (Indicate if Living with POH):</label><br />
                         <input type="text" id="currentAddress" name="currentAddress" required /> <hr />
 
-                        <label htmlFor="residencyduration">For how long (Include # of months/years):</label><br />
+                        <label htmlFor="residencyduration">Duration of Tenancy (Include # of months/years):</label><br />
                         <input type="text" id="residencyduration" name="residencyduration" required /> <hr />
 
                         <h5 style={{ textAlign: 'center' }}>If You are Currently Experiencing Homelessness:</h5> <hr />
@@ -214,7 +214,16 @@ const IntakeForm = () => {
                         <input type="text" id="currentResidencyDuration" name="currentResidencyDuration" required /> <hr />
 
                         <label htmlFor="pastShelter">Have You Been in a Shelter Before? <br /> (Indicate Dates and Names of Shelters):</label>
-                        <br /><input type="text" id="pastShelter" name="pastShelter" required /> <hr />
+                        <br />
+        {/* 8/10 edit  */}
+                        <textarea 
+                        id="pastShelter" 
+                        name="pastShelter" 
+                        rows="2"
+                        cols="50"
+                        placeholder="Enter past shelters here."
+                        required
+                        ></textarea><hr />
 
                         <h5 style={{ textAlign: 'center' }}>Contact Information:</h5> <hr />
 
@@ -247,7 +256,13 @@ const IntakeForm = () => {
                         <input type="text" id="healthInsurance" name="healthInsurance" /> <hr />
 
                         <label htmlFor="pastInjuries">Past Injuries/Dates (by POH):</label><br />
-                        <input type="text" id="pastInjuries" name="pastInjuries" /> <hr />
+                        <textarea 
+                        id="pastInjuries" 
+                        name="pastInjuries"
+                        rows="2"
+                        cols="50"
+                        placeholder='Enter past injuries here.'
+                        ></textarea><hr />
 
                         <label htmlFor="pcp">Primary Doctor? (Y/N):</label><br />
                         <input type="text" id="pcp" name="pcp" /> <hr />
@@ -255,7 +270,13 @@ const IntakeForm = () => {
                         <h5 style={{ textAlign: 'center' }}>Legal Information: </h5> <hr />
 
                         <label htmlFor="legal">Current Legal Proceedings/Dates:</label><br />
-                        <input type="text" id="legal" name="legal" /> <hr />
+                        <textarea 
+                        id="legal" 
+                        name="legal"
+                        rows="2"
+                        cols="50"
+                        placeholder='Enter current legal proceedings here.' 
+                        ></textarea><hr />
 
                         <label htmlFor="substance">Substance Use/History (if any):</label><br />
                         <input type="text" id="substance" name="substance" /> <hr />
@@ -272,7 +293,13 @@ const IntakeForm = () => {
                         <p>Note: Please ensure all fields are complete and accurate. Type N/A if it does not apply to you.</p> <hr />
 
                         <label htmlFor="childrenNames">Children's Names (separated by commas):</label><br />
-                        <input type="text" id="childrenNames" name="childrenNames" /> <hr />
+                        <textarea 
+                        id="childrenNames" 
+                        name="childrenNames"
+                        rows="2"
+                        cols="50"
+                        placeholder="Enter children's names here."
+                        ></textarea><hr />
 
                         <label htmlFor="childrenDOB">Children's DOB (separated by commas):</label><br />
                         <input type="text" id="childrenDOB" name="childrenDOB" /> <hr />
