@@ -201,7 +201,7 @@ const IntakeForm = () => {
                         <textarea 
                         id="pastresidency" 
                         name="pastresidency"
-                        rows="4"
+                        rows="2"
                         cols="50"
                         required
                         placeholder="Enter past addresses and dates here."  
