@@ -358,12 +358,24 @@ onChange={(e) => handleChange(e, setCharCountHistory, charLimitHistory)}
 
                 <Tab eventKey="page6" title="Other Info">
 
-
                         <label htmlFor="otherInfo">Other Information:</label> <br /> <br />
-                        <textarea id="otherInfo" name="otherInfo" rows="10" style={{ width: '100%' }} 
+                        <textarea 
+                        id="otherInfo" 
+                        name="otherInfo" 
+                        rows="10" 
+                        style={{ width: '100%' }} 
                         placeholder='Any other relevant information you would like to share about 
                         the experiences you encountered with your POH as well as your current needs, 
-                        challenges/obstacles, and responsibilities.'></textarea> <br /> <br />
+                        challenges/obstacles, and responsibilities.'
+    // added on 8/10
+                        maxLength={charLimitOtherInfo}
+                        onChange={(e) => handleChange(e, setCharCountOtherInfo, charLimitOtherInfo)}
+                        
+                        ></textarea> <br /> <br />
+                         <div style={{ color: getCharCountColor(charCountOtherInfo, charLimitOtherInfo) }}>
+                            {charCountOtherInfo}/{charLimitOtherInfo} characters
+                        </div>
+                        <br />
                         <button onClick={() => setKey('page7')}>Next</button>
                 </Tab>
 
