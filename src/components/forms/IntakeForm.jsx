@@ -23,6 +23,15 @@ const IntakeForm = () => {
         setKey(k);
     };
 
+    // handle change
+    const handleChange = (e, setCharCount, charLimit) => {
+        const value = e.target.value;
+        setCharCount(value.length);
+        if (value.length <= charLimit) {
+            setFormData({ ...formData, [e.target.name]: value });
+        }
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!consentChecked) {
@@ -114,6 +123,7 @@ const IntakeForm = () => {
         return pdfData;
     };
 
+    // added charcount indicators
     const getCharCountColor = (charCount, charLimit) => {
         if (charCount > charLimit) {
             return 'red';
