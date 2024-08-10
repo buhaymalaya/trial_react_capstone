@@ -114,7 +114,15 @@ const IntakeForm = () => {
         return pdfData;
     };
 
-    
+    const getCharCountColor = (charCount, charLimit) => {
+        if (charCount > charLimit) {
+            return 'red';
+        } else if (charCount > charLimit * 0.9) {
+            return 'orange';
+        } else {
+            return 'black';
+        }
+    };
     
     
     return (
