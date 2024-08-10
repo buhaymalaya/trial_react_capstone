@@ -11,7 +11,13 @@ const IntakeForm = () => {
     const [formData, setFormData] = useState({});
     const [consentChecked, setConsentChecked] = useState(false);
    
+    // Character limits for text areas
+    const charLimitHistory = 2100;
+    const charLimitOtherInfo = 2000;
 
+    // State to track character counts
+    const [charCountHistory, setCharCountHistory] = useState(0);
+    const [charCountOtherInfo, setCharCountOtherInfo] = useState(0);
 
     const handleSelect = (k) => {
         setKey(k);
@@ -304,7 +310,12 @@ const IntakeForm = () => {
                         <br /><br />Remember that intimate partner violence (IPV) or domestic violence (DV) not only includes physical violence but also emotional, sexual, psychological, spiritual, and financial, among others. The main goal of IPV is exertion of power and control on an individual that may include their family/children.</p> <hr />
 
                         <label htmlFor="relationshipHistory">Relationship/DV History:</label> <br /> <br />
-                        <textarea id="relationshipHistory" name="relationshipHistory" rows="20" style={{ width: '100%' }} placeholder='For example:
+                        <textarea 
+                            id="relationshipHistory" 
+                            name="relationshipHistory" 
+                            rows="20" 
+                            style={{ width: '100%' }} 
+                            placeholder='For example:
 Duration of Relationship - 03/2013 to 09/2023
 
 DV Incidents (Starting with Most Recent):
@@ -313,8 +324,13 @@ Date/Time - What happened, where it happened, who was present during incident
 .
 .
 .
-First Incident of DV with POH
-'></textarea> <br /> <br />
+First Incident of DV with POH'
+maxLength={charLimitHistory}
+onChange={(e) => handleChange(e, setCharCountHistory, charLimitHistory)}
+></textarea> <br /> <br />
+<div style={{ color: getCharCountColor(charCountHistory, charLimitHistory) }}>
+                            {charCountHistory}/{charLimitHistory} characters
+                        </div>
 
                         <button onClick={() => setKey('page6')}>Next</button> <br /> <br />
                 </Tab>
@@ -324,7 +340,9 @@ First Incident of DV with POH
 
                         <label htmlFor="otherInfo">Other Information:</label> <br /> <br />
                         <textarea id="otherInfo" name="otherInfo" rows="10" style={{ width: '100%' }} 
-                        placeholder='Any other relevant information you would like to share about the experiences you encountered with your POH as well as your current needs, challenges/obstacles, and responsibilities.'></textarea> <br /> <br />
+                        placeholder='Any other relevant information you would like to share about 
+                        the experiences you encountered with your POH as well as your current needs, 
+                        challenges/obstacles, and responsibilities.'></textarea> <br /> <br />
                         <button onClick={() => setKey('page7')}>Next</button>
                 </Tab>
 
