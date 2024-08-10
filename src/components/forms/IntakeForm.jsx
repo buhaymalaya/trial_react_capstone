@@ -260,7 +260,7 @@ const IntakeForm = () => {
                         id="pastInjuries" 
                         name="pastInjuries"
                         rows="2"
-                        cols="50"
+                        cols="30"
                         placeholder='Enter past injuries here.'
                         ></textarea><hr />
 
