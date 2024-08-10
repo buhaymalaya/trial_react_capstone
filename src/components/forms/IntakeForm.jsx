@@ -158,7 +158,7 @@ const IntakeForm = () => {
                         <input type="text" id="middleName" name="middleName" /> <hr />
 
                         <label htmlFor="lastName">Last Name:</label> <br />
-                        <input type="text" id="lastName" name="lastName" /> <hr />
+                        <input type="text" id="lastName" name="lastName" required /> <hr />
 
                         <label htmlFor="alias">Aliases/Former Names:</label><br />
                         <input type="text" id="alias" name="alias" /> <hr />
@@ -209,10 +209,10 @@ const IntakeForm = () => {
                         ></textarea> <hr />
 
                         <label htmlFor="currentResidency">Where/With Whom are You Living With:</label><br />
-                        <input type="text" id="currentResidency" name="currentResidency" required /> <hr />
+                        <input type="text" id="currentResidency" name="currentResidency" /> <hr />
 
                         <label htmlFor="currentResidencyDuration">Duration of Tenancy:</label><br />
-                        <input type="text" id="currentResidencyDuration" name="currentResidencyDuration" required /> <hr />
+                        <input type="text" id="currentResidencyDuration" name="currentResidencyDuration" /> <hr />
 
                         <label htmlFor="pastShelter">Have You Been in a Shelter Before? <br /> (Indicate Dates and Names of Shelters):</label>
                         <br />
