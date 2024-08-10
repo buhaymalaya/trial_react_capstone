@@ -11,11 +11,11 @@ const IntakeForm = () => {
     const [formData, setFormData] = useState({});
     const [consentChecked, setConsentChecked] = useState(false);
    
-    // Character limits for text areas
+    // Character limits for text areas 8/10
     const charLimitHistory = 2100;
     const charLimitOtherInfo = 2000;
 
-    // State to track character counts
+    // State to track character counts 8/10
     const [charCountHistory, setCharCountHistory] = useState(0);
     const [charCountOtherInfo, setCharCountOtherInfo] = useState(0);
 
@@ -23,7 +23,7 @@ const IntakeForm = () => {
         setKey(k);
     };
 
-    // handle change
+    // handle change 8/10
     const handleChange = (e, setCharCount, charLimit) => {
         const value = e.target.value;
         setCharCount(value.length);
@@ -130,7 +130,7 @@ const IntakeForm = () => {
         } else if (charCount > charLimit * 0.9) {
             return 'orange';
         } else {
-            return 'black';
+            return 'white';
         }
     };
     
@@ -343,12 +343,15 @@ Date/Time - What happened, where it happened, who was present during incident
 .
 .
 First Incident of DV with POH'
+
+// changes below on 8/10 until closing div before page 6
+
 maxLength={charLimitHistory}
 onChange={(e) => handleChange(e, setCharCountHistory, charLimitHistory)}
 ></textarea> <br /> <br />
 <div style={{ color: getCharCountColor(charCountHistory, charLimitHistory) }}>
                             {charCountHistory}/{charLimitHistory} characters
-                        </div>
+                        </div> <br /> 
 
                         <button onClick={() => setKey('page6')}>Next</button> <br /> <br />
                 </Tab>
