@@ -5,6 +5,7 @@ import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import './Toast.css'
 
+// ADD PRIVACY POLICY, RELEASE OF LIABILITY
 
 const IntakeForm = () => {
     const [key, setKey] = useState('page1');
@@ -157,28 +158,28 @@ const IntakeForm = () => {
                         <input type="text" id="middleName" name="middleName" /> <hr />
 
                         <label htmlFor="lastName">Last Name:</label> <br />
-                        <input type="text" id="lastName" name="lastName" required /> <hr />
+                        <input type="text" id="lastName" name="lastName" /> <hr />
 
                         <label htmlFor="alias">Aliases/Former Names:</label><br />
                         <input type="text" id="alias" name="alias" /> <hr />
 
                         <label htmlFor="genderIdentity">Gender Identity:</label><br />
-                        <input type="text" id="genderIdentity" name="genderIdentity" required /> <hr />
+                        <input type="text" id="genderIdentity" name="genderIdentity" /> <hr />
 
                         <label htmlFor="preferredPronouns">Preferred Pronouns:</label><br />
-                        <input type="text" id="preferredPronouns" name="preferredPronouns" required /> <hr />
+                        <input type="text" id="preferredPronouns" name="preferredPronouns" /> <hr />
 
                         <label htmlFor="ethnicity">Ethnicity:</label><br />
-                        <input type="text" id="ethnicity" name="ethnicity" required /> <hr />
+                        <input type="text" id="ethnicity" name="ethnicity" /> <hr />
 
                         <label htmlFor="primaryLanguage">Primary Language:</label><br />
-                        <input type="text" id="primaryLanguage" name="primaryLanguage" required /> <hr />
+                        <input type="text" id="primaryLanguage" name="primaryLanguage" /> <hr />
 
                         <label htmlFor="preferredLanguage">Preferred Language:</label><br />
-                        <input type="text" id="preferredLanguage" name="preferredLanguage" required /> <hr />
+                        <input type="text" id="preferredLanguage" name="preferredLanguage" /> <hr />
 
                         <label htmlFor="maritalStatus">Marital Status:</label><br />
-                        <input type="text" id="maritalStatus" name="maritalStatus" required /> <hr />
+                        <input type="text" id="maritalStatus" name="maritalStatus" /> <hr />
 
                         <label htmlFor="dob">Date of Birth:</label><br />
                         <input type="date" id="dob" name="dob" required /> <hr />
@@ -189,10 +190,10 @@ const IntakeForm = () => {
                         <h5 style={{ textAlign: 'center' }}>Residency Information:</h5> <hr />
 
                         <label htmlFor="currentAddress">Current Address (Indicate if Living with POH):</label><br />
-                        <input type="text" id="currentAddress" name="currentAddress" required /> <hr />
+                        <input type="text" id="currentAddress" name="currentAddress" /> <hr />
 
                         <label htmlFor="residencyduration">Duration of Tenancy (Include # of months/years):</label><br />
-                        <input type="text" id="residencyduration" name="residencyduration" required /> <hr />
+                        <input type="text" id="residencyduration" name="residencyduration" /> <hr />
 
                         <h5 style={{ textAlign: 'center' }}>If You are Currently Experiencing Homelessness:</h5> <hr />
 
@@ -203,7 +204,7 @@ const IntakeForm = () => {
                         name="pastresidency"
                         rows="2"
                         cols="50"
-                        required
+                        
                         placeholder="Enter past addresses and dates here."  
                         ></textarea> <hr />
 
@@ -222,7 +223,7 @@ const IntakeForm = () => {
                         rows="2"
                         cols="50"
                         placeholder="Enter past shelters here."
-                        required
+                        
                         ></textarea><hr />
 
                         <h5 style={{ textAlign: 'center' }}>Contact Information:</h5> <hr />
