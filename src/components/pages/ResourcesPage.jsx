@@ -43,7 +43,7 @@ const ResourceLinks = () => (
     <hr></hr><p>DEPARTMENT OF SOCIAL SERVICES: FOOD STAMPS/LOW-INCOME HEALTH INSURANCE/CASH AID</p> <br /> <p>[ varies by state - call 211 or search above ] </p>
     <ResourceLink title="STRONG HEARTS NATIVE AMERICAN HELP" url="http://strongheartshelpline.org/" />
     <ResourceLink title="WOMEN'S LAW: STATE-BY-STATE INFO ON LAWS INCLUDING RESTRAINING ORDERS/CHILD CUSTODY" url="https://www.womenslaw.org/" />
-    <ResourceLink title="ABUSED DEAF WOMEN'S ADVOCACY SERVICES (ADWAS)" url="https://www.youtube.com/watch?v=ql7zD8X80wE" />
+    <ResourceLink title="ABUSED DEAF WOMEN'S ADVOCACY SERVICES (ADWAS)" url="https://www.adwas.org/" />
   </>
 );
 
