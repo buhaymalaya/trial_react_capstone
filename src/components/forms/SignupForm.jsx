@@ -78,7 +78,7 @@ export default function SignupForm() {
         <div className="about-decoy">
           <h6>
           
-<br /> By signing up for an account and clicking the "register" button below, you have read and agree to the terms of the Privacy Policy and Release of Liability. <br /> <br />
+<br /> By clicking the "register" button below, you have read and agree to the terms of the Privacy Policy and Release of Liability. <br /> <br />
 
 <div className="about-decoy"> Privacy Policy <br /> <br />
 
