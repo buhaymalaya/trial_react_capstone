@@ -78,14 +78,12 @@ export default function SignupForm() {
         <div className="about-decoy">
           <h6>
           
-By signing up for an account and clicking the "register" button below, you agree to the terms of the Privacy Policy and Release of Liability. <br /> <br />
+<br /> By signing up for an account and clicking the "register" button below, you have read and agree to the terms of the Privacy Policy and Release of Liability. <br /> <br />
 
 <div className="about-decoy"> Privacy Policy <br /> <br />
 
 The [esc] Team ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and protect the information you provide when using our services, 
 particularly in the context of domestic violence support and connecting you to respective DV shelters. <br /> <br />
-
-Information Collection and Use <br /> <br />
 
 Purpose: We collect personal information solely for the purpose of providing support and assistance in situations of domestic violence. <br /> <br />
 Information Sharing: We do not sell, trade, or otherwise transfer your personal information to third parties. Your information will only be shared with domestic violence shelters or other 
