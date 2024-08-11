@@ -78,39 +78,49 @@ export default function SignupForm() {
         <div className="about-decoy">
           <h6>
           
-By signing up for an account and clicking the "register" button below, you agree to both the Privacy Policy and Release of Liability as stipulated below. <br />
+By signing up for an account and clicking the "register" button below, you agree to both the Privacy Policy and Release of Liability as stipulated. <br /> <br />
 
-Privacy Policy <br />
+<div className="about-decoy"> Privacy Policy <br /> <br />
 
-Introduction
+The [esc] Team ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and protect the information you provide when using our services, 
+particularly in the context of domestic violence support and connecting you to respective DV shelters. <br />
 
-The [esc] Team ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and protect the information you provide when using our services, particularly in the context of domestic violence support and connecting you to respective DV shelters.
+Information Collection and Use <br /> <br />
 
-Information Collection and Use
-
-Purpose: We collect personal information solely for the purpose of providing support and assistance in situations of domestic violence. <br />
-Information Sharing: We do not sell, trade, or otherwise transfer your personal information to third parties. Your information will only be shared with domestic violence shelters or other relevant support organizations as necessary to provide you with the services you request. <br />
-Security: We implement a variety of security measures to maintain the safety of your personal information. However, please be aware that no method of transmission over the Internet, or method of electronic storage, is 100% secure. <br />
-User Consent: By using our services, you consent to the collection and use of your information as outlined in this Privacy Policy. <br />
-Changes to This Policy: We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date. <br />
+Purpose: We collect personal information solely for the purpose of providing support and assistance in situations of domestic violence. <br /> <br />
+Information Sharing: We do not sell, trade, or otherwise transfer your personal information to third parties. Your information will only be shared with domestic violence shelters or other 
+relevant support organizations as necessary to provide you with the services you request. <br /> <br />
+Security: We implement a variety of security measures to maintain the safety of your personal information. However, please be aware that no method of transmission over the Internet, or 
+method of electronic storage, is 100% secure. <br /> <br />
+User Consent: By using our services, you consent to the collection and use of your information as outlined in this Privacy Policy. <br /> <br />
+Changes to This Policy: We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date. <br /> <br />
 If you have any questions regarding this Privacy Policy, please contact us at esc.advocate@gmail.com.
 <br /> <br /> <br />
 
-Release of Liability <br />
-Introduction <br />
+</div> <br />
 
-By accessing and using the services provided by the [esc] Team ("we," "our," or "us"), you acknowledge and agree to the following terms and conditions:
+<div className="about-decoy">
+Release of Liability <br /> <br />
 
-Technological Abuse
+By accessing and using the services provided by the [esc] Team ("we," "our," or "us"), you acknowledge and agree to the following terms and conditions: <br /> <br />
 
-Awareness: Domestic violence abusers may use various forms of technological abuse, including but not limited to tracking your online activity, monitoring communications, and accessing personal information through digital means. It is important to take precautions, such as using secure devices, using public access such as the library, maintaining strong passwords, and clearing browsing history when necessary. <br />
-Limitation of Liability: You acknowledge that [Organization Name] provides tools and services to assist in situations of domestic violence, but we cannot control or prevent all forms of technological abuse that may occur. By using our services, you agree to release the [esc] Team and its team members, employees, and affiliates from any and all liability related to any misuse or abuse of your personal information by third parties, including abusers. <br />
-User Responsibility: It is your responsibility to use our services in a safe and secure manner. We recommend taking additional steps to protect your privacy and safety when using our services, such as accessing our site from a secure location and using private browsing modes. <br />
-Agreement <br />
+Technological Abuse <br /> <br />
 
-By using our services, you agree to this Release of Liability. If you do not agree with these terms, please refrain from using our site and services. <br />
+Awareness: Domestic violence abusers may use various forms of technological abuse, including but not limited to tracking your online activity, monitoring communications, 
+and accessing personal information through digital means. It is important to take precautions, such as using secure devices, using public access such as the library, 
+maintaining strong passwords, and clearing browsing history when necessary. <br /> <br />
+Limitation of Liability: You acknowledge that [Organization Name] provides tools and services to assist in situations of domestic violence, 
+but we cannot control or prevent all forms of technological abuse that may occur. By using our services, you agree to release the [esc] Team and its team members, employees, 
+and affiliates from any and all liability related to any misuse or abuse of your personal information by third parties, including abusers. <br /> <br />
+User Responsibility: It is your responsibility to use our services in a safe and secure manner. We recommend taking additional steps to protect your privacy 
+and safety when using our services, such as accessing our site from a secure location and using private browsing modes. <br /> <br />
+Agreement <br /> <br />
+
+By using our services, you agree to this Release of Liability. If you do not agree with these terms, please refrain from using our site and services. <br /> <br />
 
 For any concerns or questions, please contact us at esc.advocate@gmail.com. <br />
+
+</div>
 
           </h6>
           </div>
