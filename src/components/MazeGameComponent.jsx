@@ -38,7 +38,7 @@
 //             style={{
 //               width: '20px',
 //               height: '20px',
-//               backgroundColor: cell === 1 ? 'darkgray' : 'white',
+//               backgroundColor: cell === 1 ? 'black' : 'white',
 //               border: '1px solid gray',
 //             }}
 //           >

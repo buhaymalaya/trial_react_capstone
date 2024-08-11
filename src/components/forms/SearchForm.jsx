@@ -46,11 +46,11 @@ const SearchForm = ({ onSearch }) => {
                             placeholder="Enter a keyword to find specific posts"
                             value={keyword}
                             onChange={handleInputChange}
-                            style={{ backgroundColor: 'darkgray', color: 'white', borderRadius: '0' }}
+                            style={{ backgroundColor: 'black', color: 'white', borderRadius: '0' }}
                         />
                     </Col>
                     <Col xs="auto" className='search-btn'>
-                        <Button variant="primary" type="submit" style={{ backgroundColor: 'darkgray', borderColor: 'white', borderRadius: '0' }}>
+                        <Button variant="primary" type="submit" style={{ backgroundColor: 'black', borderColor: 'white', borderRadius: '0' }}>
                             search
                         </Button>
                     </Col>
