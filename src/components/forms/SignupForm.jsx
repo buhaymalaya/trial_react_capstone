@@ -94,14 +94,12 @@ User Consent: By using our services, you consent to the collection and use of yo
 Changes to This Policy: We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date. <br /> <br />
 If you have any questions regarding this Privacy Policy, please contact us at esc.advocate@gmail.com.
 
-</div> <br />
+</div>
 
 <div className="about-decoy">
 Release of Liability <br /> <br />
 
 By accessing and using the services provided by the [esc] Team ("we," "our," or "us"), you acknowledge and agree to the following terms and conditions: <br /> <br />
-
-Technological Abuse <br /> <br />
 
 Awareness: Domestic violence abusers may use various forms of technological abuse, including but not limited to tracking your online activity, monitoring communications, 
 and accessing personal information through digital means. It is important to take precautions, such as using secure devices, using public access such as the library, 
