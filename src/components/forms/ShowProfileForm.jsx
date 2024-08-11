@@ -43,8 +43,8 @@ export default function ShowProfileForm() {
                 <tbody>
                     {Object.entries(formUser).map(([key, value]) => (
                         <tr key={key}>
-                            <td style={{ backgroundColor: 'black', color: 'white' }}>{key}</td>
-                            <td style={{ backgroundColor: 'black', color: 'white' }}>{value}</td>
+                            <td style={{ backgroundColor: 'darkgray', color: 'white' }}>{key}</td>
+                            <td style={{ backgroundColor: 'darkgray', color: 'white' }}>{value}</td>
                         </tr>
                     ))}
                 </tbody>

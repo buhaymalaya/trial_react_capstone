@@ -1,5 +1,5 @@
 .Toastify__toast-container {
-    background-color: black;
+    background-color: darkgray;
     
   }
   
@@ -7,7 +7,7 @@
     color: white;
     box-shadow: none;
     border-radius: 0;
-    background-color: black;
+    background-color: darkgray;
     border-radius: 0;
     min-height: 40px; 
     padding: 10px; 

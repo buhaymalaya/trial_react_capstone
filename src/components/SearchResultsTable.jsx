@@ -5,17 +5,17 @@ const SearchResultsTable = ({ searchResults }) => {
         <Table striped bordered hover>
             <thead>
                 <tr>
-                    <th style={{ backgroundColor: 'black', color: 'white' }}>#</th>
-                    <th style={{ backgroundColor: 'black', color: 'white' }}> Title</th>
-                    <th style={{ backgroundColor: 'black', color: 'white' }}>Body</th>
+                    <th style={{ backgroundColor: 'darkgray', color: 'white' }}>#</th>
+                    <th style={{ backgroundColor: 'darkgray', color: 'white' }}> Title</th>
+                    <th style={{ backgroundColor: 'darkgray', color: 'white' }}>Body</th>
                 </tr>
             </thead>
             <tbody>
                 {searchResults.map((result, index) => (
                     <tr key={index}>
-                        <td style={{ backgroundColor: 'black', color: 'white' }}>{index + 1}</td>
-                        <td style={{ backgroundColor: 'black', color: 'white' }}>{result.title}</td>
-                        <td style={{ backgroundColor: 'black', color: 'white' }}>{result.body}</td>
+                        <td style={{ backgroundColor: 'darkgray', color: 'white' }}>{index + 1}</td>
+                        <td style={{ backgroundColor: 'darkgray', color: 'white' }}>{result.title}</td>
+                        <td style={{ backgroundColor: 'darkgray', color: 'white' }}>{result.body}</td>
 
                     </tr>
                 ))}

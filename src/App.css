@@ -1,5 +1,5 @@
 * {
-  background-color: black;
+  background-color: darkgray;
   color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -33,12 +33,12 @@
 }
 
 .discussion-table th, .discussion-table td {
-  border: 1px solid black;
+  border: 1px solid darkgray;
   padding: 8px;
 }
 
 .vertical-line {
-  border-left: 1px solid black;
+  border-left: 1px solid darkgray;
 }
 
 input {
