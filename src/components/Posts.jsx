@@ -41,22 +41,22 @@ export default function Posts() {
                 <Table striped bordered hover className="discussion-table">
                     <thead>
                         <tr>
-                            <th style={{ backgroundColor: "black", color: "white", borderColor: "white" }}>UserID</th>
-                            <th style={{ backgroundColor: "black", color: "white", borderColor: "white"  }}>Title</th>
-                            <th style={{ backgroundColor: "black", color: "white", borderColor: "white"  }}>Body</th>
-                            <th style={{ backgroundColor: "black", color: "white", borderColor: "white"  }}>Published</th>
+                            <th style={{ backgroundColor: "#1e1e1e", color: "white", borderColor: "white" }}>UserID</th>
+                            <th style={{ backgroundColor: "#1e1e1e", color: "white", borderColor: "white"  }}>Title</th>
+                            <th style={{ backgroundColor: "#1e1e1e", color: "white", borderColor: "white"  }}>Body</th>
+                            <th style={{ backgroundColor: "#1e1e1e", color: "white", borderColor: "white"  }}>Published</th>
                         </tr>
                     </thead>
                     <tbody>
                         {posts.map(post => (
                             <React.Fragment key={post.id}>
                                 <tr className="post">
-                                    <td style={{ backgroundColor: "black", color: "white", borderColor: "white"  }}>{post.user_id}</td>
-                                    <td style={{ backgroundColor: "black", color: "white", borderColor: "white"  }}>
+                                    <td style={{ backgroundColor: "#1e1e1e", color: "white", borderColor: "white"  }}>{post.user_id}</td>
+                                    <td style={{ backgroundColor: "#1e1e1e", color: "white", borderColor: "white"  }}>
                                         <Link to={`/discusslogin/loggedin/${post.id}`} style={{ textDecoration: "none" }}>{post.title}</Link>
                                     </td>
-                                    <td style={{ backgroundColor: "black", color: "white", borderColor: "white"  }}>{post.body}</td>
-                                    <td style={{ backgroundColor: "black", color: "gray", borderColor: "white"  }}>{post.time_created}</td> 
+                                    <td style={{ backgroundColor: "#1e1e1e", color: "white", borderColor: "white"  }}>{post.body}</td>
+                                    <td style={{ backgroundColor: "#1e1e1e", color: "gray", borderColor: "white"  }}>{post.time_created}</td> 
                                 </tr>
                                 {post.replies.map(reply => (
                                     <tr key={`reply-${reply.id}`} className="reply" >

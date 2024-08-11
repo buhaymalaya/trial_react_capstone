@@ -47,7 +47,7 @@ export default function PostToReplyForm() {
                             to={`/discusslogin/loggedin/${postId}/reply`}
                             className="btn btn-primary"
                             style={{
-                                backgroundColor: 'black',
+                                backgroundColor: '#1e1e1e',
                                 borderRadius: '0',
                                 borderColor: 'white',
                                 color: 'white'
