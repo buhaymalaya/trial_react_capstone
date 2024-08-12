@@ -208,11 +208,11 @@ const IntakeForm = () => {
                         placeholder="Enter past addresses and dates here."  
                         ></textarea> <hr />
 
-                        <label htmlFor="currentResidency">Where/With Whom are You Living With:</label><br />
-                        <input type="text" id="currentResidency" name="currentResidency" /> <hr />
+                        <label htmlFor="currentTransience">Where/With Whom are You Living With:</label><br />
+                        <input type="text" id="currentTranscience" name="currentTranscience" /> <hr />
 
-                        <label htmlFor="currentResidencyDuration">Duration of Tenancy:</label><br />
-                        <input type="text" id="currentResidencyDuration" name="currentResidencyDuration" /> <hr />
+                        <label htmlFor="currentTranscienceDuration">Duration of Tenancy:</label><br />
+                        <input type="text" id="currentTranscienceDuration" name="currentTranscienceDuration" /> <hr />
 
                         <label htmlFor="pastShelter">Have You Been in a Shelter Before? <br /> (Indicate Dates and Names of Shelters):</label>
                         <br />
