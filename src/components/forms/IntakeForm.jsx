@@ -148,7 +148,7 @@ const IntakeForm = () => {
 
                         <h5 style={{ textAlign: 'center' }}>Personal Information:</h5> <hr />
 
-                        <label htmlFor="firstName">First Name:</label>
+                        <label htmlFor="firstName">First Name: (required)</label>
                         <br />
                         <input type="text" id="firstName" name="firstName" required /> <hr />
 
@@ -157,7 +157,7 @@ const IntakeForm = () => {
 
                         <input type="text" id="middleName" name="middleName" /> <hr />
 
-                        <label htmlFor="lastName">Last Name:</label> <br />
+                        <label htmlFor="lastName">Last Name: (required)</label> <br />
                         <input type="text" id="lastName" name="lastName" required /> <hr />
 
                         <label htmlFor="alias">Aliases/Former Names:</label><br />
@@ -181,7 +181,7 @@ const IntakeForm = () => {
                         <label htmlFor="maritalStatus">Marital Status:</label><br />
                         <input type="text" id="maritalStatus" name="maritalStatus" /> <hr />
 
-                        <label htmlFor="dob">Date of Birth:</label><br />
+                        <label htmlFor="dob">Date of Birth: (required)</label><br />
                         <input type="date" id="dob" name="dob" required /> <hr />
 
                         <label htmlFor="countryOfOrigin">Country of Origin:</label><br />
@@ -228,13 +228,13 @@ const IntakeForm = () => {
 
                         <h5 style={{ textAlign: 'center' }}>Contact Information:</h5> <hr />
 
-                        <label htmlFor="safePhone">Safe Phone Number:</label><br />
+                        <label htmlFor="safePhone">Safe Phone Number: (required)</label><br />
                         <input type="text" id="safePhone" name="safePhone" required /> <hr />
 
-                        <label htmlFor="voiceMail">Safe to Leave a Voicemail? (Y/N):</label><br />
+                        <label htmlFor="voiceMail">Safe to Leave a Voicemail? (Y/N) (required):</label><br />
                         <input type="text" id="voiceMail" name="voiceMail" required /> <hr />
 
-                        <label htmlFor="safeEmail">Safe Email Address:</label><br />
+                        <label htmlFor="safeEmail">Safe Email Address: (required)</label><br />
                         <input type="text" id="safeEmail" name="safeEmail" required /> <hr />
 
 
