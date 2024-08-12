@@ -82,7 +82,7 @@ const IntakeForm = () => {
         let y = 20;
 
         const sections = [
-            { title: 'Basic Demographics', fields: ['firstName', 'middleName', 'lastName', 'alias', 'genderIdentity', 'preferredPronouns', 'ethnicity', 'primaryLanguage', 'preferredLanguage', 'maritalStatus', 'dob', 'countryOfOrigin', 'currentAddress', 'residencyduration', 'pastresidency', 'currentResidency', 'currentResidencyDuration', 'pastShelter', 'safePhone', 'voiceMail', 'safeEmail'] },
+            { title: 'Basic Demographics', fields: ['firstName', 'middleName', 'lastName', 'alias', 'genderIdentity', 'preferredPronouns', 'ethnicity', 'primaryLanguage', 'preferredLanguage', 'maritalStatus', 'dob', 'countryOfOrigin', 'currentAddress', 'residencyduration', 'pastresidency', 'currentTranscience', 'currentTranscienceDuration', 'pastShelter', 'safePhone', 'voiceMail', 'safeEmail'] },
             { title: 'Medical/Legal', fields: ['medicalConditions', 'medications', 'healthInsurance', 'pastInjuries', 'pcp', 'legal', 'substance', 'criminal'] },
             { title: 'Children', fields: ['childrenNames', 'childrenDOB', 'childCustody', 'POHparent', 'childHealth', 'school'] },
             { title: 'POH', fields: ['pohName', 'relationship', 'pohDOB', 'pohEmployment', 'pohAddress', 'pohZips', 'pohSubstance', 'pohCriminal', 'pohProperty'] },
