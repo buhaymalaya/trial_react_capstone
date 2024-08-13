@@ -108,12 +108,12 @@ const IntakeForm = () => {
                         lines.forEach(line => {
                             const lineHeight = doc.getTextDimensions(line).h / doc.internal.scaleFactor;
                             doc.text(20, y, line, { fontSize: 5 });
-                            y += lineHeight + 15; // Adjust spacing as needed
+                            y += lineHeight + 10; // Adjust spacing as needed
                         });
                     } else {
                         const lineHeight = doc.getTextDimensions(value).h / doc.internal.scaleFactor;
                         doc.text(20, y, `${field}: ${value}`, { fontSize: 5 });
-                        y += lineHeight + 15; // Adjust spacing as needed
+                        y += lineHeight + 10; // Adjust spacing as needed
                     }
                 }
             });
