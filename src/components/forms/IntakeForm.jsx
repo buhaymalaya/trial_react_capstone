@@ -118,7 +118,7 @@ const IntakeForm = () => {
                 }
             });
         });
-        const pdfData = doc.output('blob');
+        const pdfData = doc.output('intake');
         // Save the concatenated PDF
         doc.save("intake_form.pdf");
         return pdfData;
