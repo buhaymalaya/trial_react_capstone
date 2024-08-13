@@ -113,7 +113,7 @@ const IntakeForm = () => {
                     } else {
                         const lineHeight = doc.getTextDimensions(value).h / doc.internal.scaleFactor;
                         doc.text(20, y, `${field}: ${value}`, { fontSize: 5 });
-                        y += lineHeight + 5; // Adjust spacing as needed
+                        y += lineHeight + 7; // Adjust spacing as needed
                     }
                 }
             });
