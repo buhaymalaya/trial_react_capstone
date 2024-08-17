@@ -113,7 +113,7 @@ const IntakeForm = () => {
                         || section.title === 'Basic Demographics' && field === 'pastShelter'
                         || section.title === 'Medical/Legal' && field === 'pastInjuries'
                         || section.title === 'Medical/Legal' && field === 'legal'
-
+                        || section.title === 'Children' && field === 'childrenNames'
 
                     ) {
                         const lines = doc.splitTextToSize(value, 170); // Adjust width as needed
