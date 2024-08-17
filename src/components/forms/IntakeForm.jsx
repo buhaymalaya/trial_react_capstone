@@ -67,6 +67,11 @@ const IntakeForm = () => {
                 "Authorization": apiKey
                 }
             });
+
+            console.log("Response status:", response.status);
+            const responseText = await response.text();
+            console.log("Response text:", responseText);
+            
             if (!response.ok) {
                 throw new Error('Upload failed');
             }
