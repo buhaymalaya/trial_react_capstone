@@ -58,7 +58,7 @@ const IntakeForm = () => {
         formData.append('file', pdfData);
     
         const apiKey = import.meta.env.VITE_API_KEY;
-        console.log(apiKey)
+        console.log("API key:", apiKey)
         try {
             const response = await fetch('https://file.io/', {
                 method: 'POST',
