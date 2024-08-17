@@ -103,7 +103,9 @@ const IntakeForm = () => {
             section.fields.forEach((field) => {
                 const value = formData[field];
                 if (value !== undefined && value !== null) {
-                    if (section.title === 'History' || section.title === 'Other Info') {
+                    if (section.title === 'History' || section.title === 'Other Info'
+                        || section.title === 'Basic Demographics' && field === 'pastresidency'
+                    ) {
                         const lines = doc.splitTextToSize(value, 170); // Adjust width as needed
                         lines.forEach(line => {
                             const lineHeight = doc.getTextDimensions(line).h / doc.internal.scaleFactor;
