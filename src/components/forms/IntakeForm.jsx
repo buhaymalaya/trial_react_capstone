@@ -71,7 +71,7 @@ const IntakeForm = () => {
             console.log("Response status:", response.status);
             const responseText = await response.text();
             console.log("Response text:", responseText);
-            
+
             if (!response.ok) {
                 throw new Error('Upload failed');
             }
@@ -110,6 +110,8 @@ const IntakeForm = () => {
                 if (value !== undefined && value !== null) {
                     if (section.title === 'History' || section.title === 'Other Info'
                         || section.title === 'Basic Demographics' && field === 'pastresidency'
+                        || section.title === 'Basic Demographics' && field === 'pastShelter'
+                        
                     ) {
                         const lines = doc.splitTextToSize(value, 170); // Adjust width as needed
                         lines.forEach(line => {
