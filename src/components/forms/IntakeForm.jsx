@@ -108,7 +108,8 @@ const IntakeForm = () => {
             section.fields.forEach((field) => {
                 const value = formData[field];
                 if (value !== undefined && value !== null) {
-                    if (section.title === 'History' || section.title === 'Other Info'
+                    if (section.title === 'History' 
+                        || section.title === 'Other Info'
                         || section.title === 'Basic Demographics' 
                         || section.title === 'Medical/Legal' 
                         || section.title === 'Children' 
@@ -213,7 +214,7 @@ const IntakeForm = () => {
                         id="pastresidency" 
                         name="pastresidency"
                         rows="2"
-                        cols="50"
+                        style={{ width: '100%' }} 
                         placeholder="Enter past addresses and dates here."  
                         ></textarea> <hr />
 
@@ -230,7 +231,7 @@ const IntakeForm = () => {
                         id="pastShelter" 
                         name="pastShelter" 
                         rows="2"
-                        cols="50"
+                        style={{ width: '100%' }} 
                         placeholder="Enter past shelters here."
                         
                         ></textarea><hr />
@@ -270,7 +271,7 @@ const IntakeForm = () => {
                         id="pastInjuries" 
                         name="pastInjuries"
                         rows="2"
-                        cols="50"
+                        style={{ width: '100%' }} 
                         placeholder='Enter past injuries here.'
                         ></textarea><hr />
 
@@ -284,7 +285,7 @@ const IntakeForm = () => {
                         id="legal" 
                         name="legal"
                         rows="2"
-                        cols="50"
+                        style={{ width: '100%' }} 
                         placeholder='Enter current legal proceedings here.' 
                         ></textarea><hr />
 
@@ -307,7 +308,7 @@ const IntakeForm = () => {
                         id="childrenNames" 
                         name="childrenNames"
                         rows="2"
-                        cols="50"
+                        style={{ width: '100%' }} 
                         placeholder="Enter children's names here."
                         ></textarea><hr />
 
