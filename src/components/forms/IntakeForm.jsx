@@ -109,10 +109,8 @@ const IntakeForm = () => {
                 const value = formData[field];
                 if (value !== undefined && value !== null) {
                     if (section.title === 'History' || section.title === 'Other Info'
-                        || section.title === 'Basic Demographics' && field === 'pastresidency'
-                        || section.title === 'Basic Demographics' && field === 'pastShelter'
-                        || section.title === 'Medical/Legal' && field === 'pastInjuries'
-                        || section.title === 'Medical/Legal' && field === 'legal'
+                        || section.title === 'Basic Demographics' && (field === 'pastresidency' || field === 'pastShelter')
+                        || section.title === 'Medical/Legal' && (field === 'pastInjuries' || field === 'legal')
                         || section.title === 'Children' && field === 'childrenNames'
 
                     ) {
@@ -125,7 +123,7 @@ const IntakeForm = () => {
                     } else {
                         const lineHeight = doc.getTextDimensions(value).h / doc.internal.scaleFactor;
                         doc.text(20, y, `${field}: ${value}`, { fontSize: 5 });
-                        y += lineHeight + 7; // Adjust spacing as needed
+                        y += lineHeight + 5; // Adjust spacing as needed
                     }
                 }
             });
