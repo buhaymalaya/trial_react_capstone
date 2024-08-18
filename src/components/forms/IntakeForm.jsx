@@ -87,7 +87,7 @@ const IntakeForm = () => {
         let y = 20;
 
         const sections = [
-            { title: 'Basic Demographics', fields: ['firstName', 'middleName', 'lastName', 'alias', 'genderIdentity', 'preferredPronouns', 'ethnicity', 'primaryLanguage', 'preferredLanguage', 'maritalStatus', 'dob', 'countryOfOrigin', 'currentAddress', 'residencyduration', 'pastresidency', 'currentTranscience', 'currentTranscienceDuration', 'pastShelter', 'safePhone', 'voiceMail', 'safeEmail'] },
+            { title: 'Basic Demographics', fields: ['firstName', 'middleName', 'lastName', 'alias', 'genderIdentity', 'preferredPronouns', 'ethnicity', 'primaryLanguage', 'preferredLanguage', 'maritalStatus', 'dob', 'countryOfOrigin', 'currentAddress', 'residencyduration', 'pastresidency', 'currentTransience', 'currentTransienceDuration', 'pastShelter', 'safePhone', 'voiceMail', 'safeEmail'] },
             { title: 'Medical/Legal', fields: ['medicalConditions', 'medications', 'healthInsurance', 'pastInjuries', 'pcp', 'legal', 'substance', 'criminal'] },
             { title: 'Children', fields: ['childrenNames', 'childrenDOB', 'childCustody', 'POHparent', 'childHealth', 'school'] },
             { title: 'POH', fields: ['pohName', 'relationship', 'pohDOB', 'pohEmployment', 'pohAddress', 'pohZips', 'pohSubstance', 'pohCriminal', 'pohProperty'] },
@@ -109,9 +109,9 @@ const IntakeForm = () => {
                 const value = formData[field];
                 if (value !== undefined && value !== null) {
                     if (section.title === 'History' || section.title === 'Other Info'
-                        || section.title === 'Basic Demographics' && (field === 'pastresidency' || field === 'pastShelter')
-                        || section.title === 'Medical/Legal' && (field === 'pastInjuries' || field === 'legal')
-                        || section.title === 'Children' && field === 'childrenNames'
+                        || section.title === 'Basic Demographics' 
+                        || section.title === 'Medical/Legal' 
+                        || section.title === 'Children' 
 
                     ) {
                         const lines = doc.splitTextToSize(value, 170); // Adjust width as needed
@@ -214,15 +214,14 @@ const IntakeForm = () => {
                         name="pastresidency"
                         rows="2"
                         cols="50"
-                        
                         placeholder="Enter past addresses and dates here."  
                         ></textarea> <hr />
 
                         <label htmlFor="currentTransience">Where/With Whom are You Living With:</label><br />
-                        <input type="text" id="currentTranscience" name="currentTranscience" /> <hr />
+                        <input type="text" id="currentTransience" name="currentTransience" /> <hr />
 
-                        <label htmlFor="currentTranscienceDuration">Duration of Tenancy:</label><br />
-                        <input type="text" id="currentTranscienceDuration" name="currentTranscienceDuration" /> <hr />
+                        <label htmlFor="currentTransienceDuration">Duration of Tenancy:</label><br />
+                        <input type="text" id="currentTransienceDuration" name="currentTransienceDuration" /> <hr />
 
                         <label htmlFor="pastShelter">Have You Been in a Shelter Before? <br /> (Indicate Dates and Names of Shelters):</label>
                         <br />
