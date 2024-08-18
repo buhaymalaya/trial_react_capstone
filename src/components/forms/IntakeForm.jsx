@@ -110,9 +110,7 @@ const IntakeForm = () => {
                 if (value !== undefined && value !== null) {
                     if (section.title === 'History' 
                         || section.title === 'Other Info'
-                        || section.title === 'Basic Demographics' 
-                        || section.title === 'Medical/Legal' 
-                        || section.title === 'Children' 
+                    
 
                     ) {
                         const lines = doc.splitTextToSize(value, 170); // Adjust width as needed
