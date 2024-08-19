@@ -108,25 +108,21 @@ const IntakeForm = () => {
             section.fields.forEach((field) => {
                 const value = formData[field];
                 if (value !== undefined && value !== null) {
-                    if (section.title === 'History' 
-                        || section.title === 'Other Info'
-                    
-
-                    ) {
-                        const lines = doc.splitTextToSize(value, 170); // Adjust width as needed
-                        lines.forEach(line => {
-                            const lineHeight = doc.getTextDimensions(line).h / doc.internal.scaleFactor;
-                            doc.text(20, y, line, { fontSize: 5 });
-                            y += lineHeight + 5; // Adjust spacing as needed
-                        });
-                    } else {
-                        const lineHeight = doc.getTextDimensions(value).h / doc.internal.scaleFactor;
-                        doc.text(20, y, `${field}: ${value}`, { fontSize: 5 });
+                    // Combine the field name and value for display
+                    const text = `${field}: ${value}`;
+            
+                    // Split the combined text to handle wrapping
+                    const lines = doc.splitTextToSize(text, 170); // Adjust width as needed
+                    lines.forEach(line => {
+                        const lineHeight = doc.getTextDimensions(line).h / doc.internal.scaleFactor;
+                        doc.text(20, y, line, { fontSize: 5 }); // Display the line with the field name and value
                         y += lineHeight + 5; // Adjust spacing as needed
-                    }
+                    });
                 }
             });
+            
         });
+        
         const pdfData = doc.output('blob');
         // Save the concatenated PDF
         doc.save("intake_form.pdf");
