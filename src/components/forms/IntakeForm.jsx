@@ -121,6 +121,7 @@ const IntakeForm = () => {
                 }
             });
             // add chatbot specific for psycho education
+            // add instructions of intake page not logged in on actual intake page form
             
         });
         
