@@ -104,7 +104,7 @@ export default function ProfileForm() {
     />
 
     <hr />
-    <label htmlFor="last-name">last Name:</label><br />
+    <label htmlFor="last-name">last name:</label><br />
     <input
         type="text"
         name="last-name"
