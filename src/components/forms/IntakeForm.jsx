@@ -163,7 +163,7 @@ const IntakeForm = () => {
                 <br /> <br />
                 NOTE: The completion of this form may take 1 to 2 hours depending on the amount of information you share. Ensure that you are in a safe 
                 location for the specified amount of time.</p>
-                        <p>Note: Please ensure all fields are complete and accurate. Type N/A if it does not apply to you.</p> <hr />
+                        <p>Please ensure all fields are complete and accurate. Type N/A if it does not apply to you.</p> <hr />
 
                         <h5 style={{ textAlign: 'center' }}>Personal Information:</h5> <hr />
 
