@@ -153,6 +153,16 @@ const IntakeForm = () => {
             <Tabs activeKey={key} onSelect={handleSelect}>
 
                 <Tab eventKey="page1" title="Basic Demographics">
+                    <p>The Intake Form Tool will help expedite the process of connecting a DV survivor (who is actively seeking safe refuge) 
+                    to a DV shelter or safehouse by sending this completed form to multiple DV agencies at once. When the form is completed, 
+                    it will be saved to your local device as well as submitted to an advocate who will forward the form to corresponding agencies 
+                    based on the current address/es you indicate on the form. <br /> <br /> 
+                Please be as detailed and accurate as you can. All information you voluntarily provide will be helpful for the receiving shelters to 
+                gauge what kind of services they can offer you. If you plan on filing for a Restraining Order, the portion for your relationship history 
+                will be a useful guide for completing the Letter of Declaration. 
+                <br /> <br />
+                NOTE: The completion of this form may take 1 to 2 hours depending on the amount of information you share. Ensure that you are in a safe 
+                location for the specified amount of time.</p>
                         <p>Note: Please ensure all fields are complete and accurate. Type N/A if it does not apply to you.</p> <hr />
 
                         <h5 style={{ textAlign: 'center' }}>Personal Information:</h5> <hr />
