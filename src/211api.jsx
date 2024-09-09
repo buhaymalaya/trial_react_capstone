@@ -38,3 +38,4 @@
 
 // TO ADD 
 // change text sizes to make reading easier for user
+// add translation api for non english users
