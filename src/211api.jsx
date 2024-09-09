@@ -40,3 +40,4 @@
 // change text sizes to make reading easier for user
 // add translation api for non english users
 // inform user that info will be lost if not completed and submitted 
+// change tester password 
