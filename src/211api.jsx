@@ -34,3 +34,7 @@
 //         searchResultsContainer.innerHTML = '<p>No results found.</p>';
 //     }
 // }
+
+
+// TO ADD 
+// change text sizes to make reading easier for user
