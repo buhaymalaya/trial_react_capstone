@@ -41,3 +41,4 @@
 // add translation api for non english users
 // inform user that info will be lost if not completed and submitted 
 // change tester password 
+// figure out how to delete accounts from admin side
