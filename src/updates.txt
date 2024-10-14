@@ -27,3 +27,8 @@ How do you foresee a user engaging with the application? Alone, with help?
 There are places where there is a lot to read and all the text has more or less the same sizing, so it's hard to tell what are the most important things to focus on. I tend to skim, even when I'm not stressed out and when I am stressed out it is hard for me to read. So, how will you ensure that the user has understood what needs to be understood to move on with the process?
 
 If this is correct, the purpose of this app is to provide a survivor a way to collect all the relevant information that would be needed to find shelter, right? 
+
+Why does a user need to be on a computer to use the application?
+
+
+consider adding a 'translate' button..it will not be ideal translation, but it might help those not familiar with English
