@@ -19,3 +19,5 @@ Any malicious content will be flagged and profile removed- can be reported direc
 
 Intake form: Recommend to explain gender identity (hover option), Instead of separating by comma, maybe add numerical list so it's easier for people to type/easier for shelters to review, expand on examples of abuse
 Include examples of different scenarios for abuse on the form field
+
+Your Profile: Include no personal identifiers for username (For example: No for Kguzman1992, but yes for Koa333)
