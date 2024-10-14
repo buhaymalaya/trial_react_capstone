@@ -21,3 +21,5 @@ Intake form: Recommend to explain gender identity (hover option), Instead of sep
 Include examples of different scenarios for abuse on the form field
 
 Your Profile: Include no personal identifiers for username (For example: No for Kguzman1992, but yes for Koa333)
+
+How do you foresee a user engaging with the application? Alone, with help?
