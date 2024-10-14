@@ -16,3 +16,6 @@ What if a POH gets access to a website and signs up for the website (Discuss tab
 What if a user is posting malicious content (i.e. hateful, discriminative language)?
 Explicit language?
 Any malicious content will be flagged and profile removed- can be reported directly to esc gmail
+
+Intake form: Recommend to explain gender identity (hover option), Instead of separating by comma, maybe add numerical list so it's easier for people to type/easier for shelters to review, expand on examples of abuse
+Include examples of different scenarios for abuse on the form field
