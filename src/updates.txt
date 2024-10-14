@@ -32,3 +32,5 @@ Why does a user need to be on a computer to use the application?
 
 
 consider adding a 'translate' button..it will not be ideal translation, but it might help those not familiar with English
+
+It looks like the completed form comes to the user and to an admin. How do you foresee the admin using the form? Or is this mostly a way to collect the info for the user to keep and follow through
